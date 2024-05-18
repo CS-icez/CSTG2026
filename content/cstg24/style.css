@@ -1,0 +1,116 @@
+/* partition css */
+body {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-image: url("images/slim.jpg");
+    background-size: calc(100% + 20px);
+    z-index: 0;
+}
+
+header {
+    height: 90px;
+    position: fixed;
+    background: rgb(8, 24, 48);
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 100;
+    overflow: hidden;
+}
+
+nav {
+    position: relative;
+    white-space: nowrap;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+nav>ul>li {
+    display: inline-block;
+    margin: 0 20px;
+    font-size: 23px;
+}
+
+nav>ul>li:hover {
+    scale: 1.1;
+}
+
+footer {
+    position: relative;
+    height: 90px;
+    background: rgb(8, 24, 48);
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+/* util css */
+.container {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+.text-red {
+    color: #d02249;
+}
+
+.text-white {
+    color: #ffffff;
+}
+
+.text-back {
+    color: rgb(8, 24, 48);
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.align-items-center {
+    align-items: center !important;
+}
+
+.d-flex {
+    display: flex !important;
+}
+
+.body-position {
+    position: absolute;
+    top: 90px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.show {
+    opacity: 1 !important;
+}
+
+.button {
+    background-color: #ffff;
+    position: fixed; 
+    z-index: 100; 
+    right: 50px;
+    bottom: 50px;
+    width: 100px;
+    height: 80px;
+    font-size: 20px;
+    border-radius: 10%;
+    border-style: none;
+    font-size: 30px;
+    color: rgb(8, 24, 48);
+}
+
+.button:hover {
+    scale: 1.1;
+    box-shadow: white 0px 0px 20px;
+}

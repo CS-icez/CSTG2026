@@ -1,0 +1,68 @@
+.iconlinks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 30px 0 80px 0;
+}
+
+.iconlink {
+    margin: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.iconlink .icon {
+    background-color: #03bd52;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    display: flex;
+    width: 90px;
+    height: 90px;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+.iconlink .icon i {
+    font-size: 40px;
+    color: #fff;
+}
+
+.iconlink span {
+    display: block;
+    text-align: center;
+    font-family: Open Sans;
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.iconlink .icon:hover {
+    animation: swing 0.5s 1;
+}
+
+@keyframes swing {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(20deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
+
+    75% {
+        transform: rotate(-20deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
