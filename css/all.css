@@ -1,1 +1,69 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css";
+
+a {
+    color: rgb(0, 173, 147);
+}
+
+a:hover {
+    box-shadow: 0 1px 0 0 currentColor;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 800px;
+    margin: 0 auto;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-button-prev, .swiper-button-next {
+    background-image: none !important;
+    color: whitesmoke;
+    font-size: 3rem;
+    z-index: 150 !important;
+}
+
+.canvas {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.container-display {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .title::after {
+    content: '';
+    display: block;
+    padding: 5px 0;
+    margin: 0 auto;
+    border-bottom: 5px solid rgb(0, 173, 147);
+}
+
+.block-display {
+    margin-top: 50px;
+}
+
+.level-item {
+    width: 50%;
+    height: 400px;
+    margin-left: -10px !important;
+}
