@@ -20,7 +20,7 @@
     </div>
     <div id="navbarMenu" class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item" href="#">
+        <a class="navbar-item" href="../content/index.html">
           <span class="icon-text">
             <span class="icon">
               <i class="fas fa-home"></i>
@@ -28,7 +28,7 @@
           <span><strong>Home</strong></span>
           </span>
         </a>
-        <a class="navbar-item" href="#">
+        <a class="navbar-item" href="../content/index.html#venue">
           <span class="icon-text">
             <span class="icon">
               <i class="fa-solid fa-plane"></i>
@@ -51,7 +51,7 @@
             </a>
           </div>
         </div>
-        <a class="navbar-item" href="#">
+        <a class="navbar-item" href="../content/index.html#sponsor">
           <span class="icon-text">
             <span class="icon">
               <i class="fa-solid fa-hands-helping"></i>
@@ -72,17 +72,17 @@
             <a class="navbar-item" href="#">
               <strong>Past Symposia</strong>
             </a>
-            <a class="navbar-item" href="#">
+            <a class="navbar-item" href="../content/index.html#organizers">
               <strong>Symposium Organizers</strong>
             </a>
-            <a class="navbar-item" href="#">
+            <a class="navbar-item" href="../content/conference-policies.html">
               <strong>Conference Policies</strong>
             </a>
-            <a class="navbar-item" href="#">
+            <a class="navbar-item" href="../content/conference-policies.html#codeOfConduct">
               <strong>Code of Conduct</strong>
             </a>
-            <a class="navbar-item" href="#">
-              <strong>Questions</strong>
+            <a class="navbar-item" href="../content/index.html#footer">
+              <strong>Contact</strong>
             </a>
           </div>
         </div>
@@ -147,7 +147,7 @@
     </div>
   </div>
 
-  <div class="block block-display">
+  <div id="venue" class="block block-display">
     <div class="container container-display">
       <div class="title is-2">Venue</div>
       <div class="level" style="background-color: rgb(0, 173, 147); margin: 0 80px; font-size: 1.1rem">
@@ -165,7 +165,154 @@
     </div>
   </div>
 
+  <div id="organizers" class="block block-display">
+    <div class="container container-display">
+      <div class="title is-2">Organizers</div>
+      <div class="columns" style="margin-top: 10px">
+        <div class="column">
+          <a class="card" href="#">
+            <div class="container-display">
+              <div class="image">
+                <img src="../images/wode.jpg" alt="Wode" style="width: 150px; height: 200px">
+              </div>
+              <div class="content" style="text-align: center">
+                <h2 style="margin-top: 20px; margin-bottom: 10px">Wode</h2>
+                <p>Wodeism Group<br>Program Chair</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="column">
+          <a class="card" href="#">
+            <div class="container-display">
+              <div class="image">
+                <img src="../images/peter.jpg" alt="Peter" style="width: 150px; height: 200px">
+              </div>
+              <div class="content" style="text-align: center">
+                <h2 style="margin-top: 20px; margin-bottom: 10px">Peter</h2>
+                <p>Peking University<br>Program Chair</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="column">
+          <a class="card" href="#">
+            <div class="container-display">
+              <div class="image">
+                <img src="../images/snakeman.jpg" alt="W.Snakeman" style="width: 150px; height: 200px">
+              </div>
+              <div class="content" style="text-align: center">
+                <h2 style="margin-top: 20px; margin-bottom: 10px">W.Snakeman</h2>
+                <p>Northeast Legacy<br>Program Chair</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="column">
+          <a class="card" href="#">
+            <div class="container-display">
+              <div class="image">
+                <img src="../images/foot.jpg" alt="Foot" style="width: 150px; height: 200px">
+              </div>
+              <div class="content" style="text-align: center">
+                <h2 style="margin-top: 20px; margin-bottom: 10px">Foot</h2>
+                <p>the GPA<br>Tech. Program Chair</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="column">
+          <a class="card" href="#">
+            <div class="container-display">
+              <div class="image">
+                <img src="../images/iceman.jpg" alt="Iceman" style="width: 150px; height: 200px">
+              </div>
+              <div class="content" style="text-align: center">
+                <h2 style="margin-top: 20px; margin-bottom: 10px">Iceman</h2>
+                <p>Marvel<br>Tech. Program Chair</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div style="display: flex; align-items: flex-end">
+        <a><button id="showAllOrganizers"><strong>Show All</strong></button></a>
+      </div>
+
+      <div id="organizersList" class="box container-display" style="width: 60%; margin-top: 20px; display: none">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Affiliation</th>
+              <th>Role</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Wode</th>
+              <td>Wodeism Group</td>
+              <td>Program Chair</td>
+            </tr>
+            <tr>
+              <th>Peter</th>
+              <td>Peking University</td>
+              <td>Program Chair</td>
+            </tr>
+            <tr>
+              <th>W.Snakeman</th>
+              <td>Northeast Legacy</td>
+              <td>Program Chair</td>
+            </tr>
+            <tr>
+              <th>Foot</th>
+              <td>the GPA(Golden Pants Army)</td>
+              <td>Technical Program Chair</td>
+            </tr>
+            <tr>
+              <th>Iceman</th>
+              <td>Marvel Company</td>
+              <td>Technical Program Chair</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id="sponsor" class="block block-display">
+      <div class="container container-display">
+        <div class="title is-2">Sponsorship</div>
+        <div class="subtitle" style="margin-top: 20px">Golden Sponsors</div>
+        <img src="../images/legacy.png" alt="Sponsor 1" style="width: 30%">
+        <div class="content" style="padding: 0 100px; font-size: 1.1rem; margin-top: 20px">
+          <p>
+            <strong>To Become A Sponsor:</strong> Sponsorship funds our diversity scholarships and the community’s work, and keeps ticket prices affordable. In exchange, we provide unique opportunities to reach a wide range of developers and other professionals. We craft custom packages for each sponsor and will work with you to make sure you get the most out of your sponsorship. If you are interested in sponsoring CSTG 2026, please contact us.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer id="footer" class="footer" style="height: 200px; margin-top: 100px">
+    <div class="content has-text-centered" style="font-size: 1.2rem">
+      <p style="color: #8a8a8a">© CSTG 2026</p>
+      <p style="color: #8a8a8a">
+        Contact Us
+        &nbsp;
+        <span class="icon" style="font-size: 2rem"><a><i class="fa-brands fa-github"></i></a></span>
+        &nbsp;
+        <span class="icon" style="font-size: 2rem"><a><i class="fa-brands fa-x-twitter"></i></a></span>
+        &nbsp;
+        <span class="icon" style="font-size: 2rem"><a><i class="fa-brands fa-instagram"></i></a></span>
+        &nbsp;
+        <span class="icon" style="font-size: 2rem"><a><i class="fa-brands fa-slack"></i></a></span>
+      </p>
+    </div>
+  </footer>
+
   <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/3.3.1/js/swiper.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
   <script src="https://kit.fontawesome.com/0a1fc3c71c.js" crossorigin="anonymous"></script>
   <script src="../js/main.js"></script>
 </body>

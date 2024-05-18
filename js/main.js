@@ -6,3 +6,18 @@ const swiper = new Swiper('.swiper-container', {
     autoplay: 2500,
     autoplayDisableOnInteraction: false
 });
+
+$(function () {
+    initShowAll();
+})
+
+function initShowAll() {
+    $('#showAllOrganizers').on('click', function () {
+        $('#organizersList').toggle();
+        if ($(this).html() === '<strong>Show All</strong>') {
+            $(this).html('<strong>Hide List</strong>');
+        } else {
+            $(this).html('<strong>Show All</strong>');
+        }
+    });
+}

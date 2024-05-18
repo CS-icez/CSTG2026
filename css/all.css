@@ -73,3 +73,11 @@ a:hover {
     height: 400px;
     margin-left: -10px !important;
 }
+
+.icon > a {
+    color: black;
+}
+
+.icon > a:hover {
+    box-shadow: none;
+}
