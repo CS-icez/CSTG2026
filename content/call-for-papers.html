@@ -5,20 +5,125 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSTG '26 Call For Papers</title>
     <link rel="stylesheet" href="../css/all.css">
+    <style>
+      .title {
+        display: inline-block;
+      }
+      .title:after {
+        width: 100%;
+      }
+    </style>
   </head>
   <body>
 
-    <nav class="nav" role="navigation"></nav>
+    <nav class="navbar" role="navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="index.html">
+          <img src="../images/logo.png" alt="Logo" width="112">
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu"
+          aria-expanded="false" data-target="navbarMenu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div id="navbarMenu" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="#">
+            <span class="icon-text">
+              <span class="icon">
+                <i class="fas fa-home"></i>
+              </span>
+              <span><strong>Home</strong></span>
+            </span>
+          </a>
+          <a class="navbar-item" href="#">
+            <span class="icon-text">
+              <span class="icon">
+                <i class="fa-solid fa-plane"></i>
+              </span>
+              <span><strong>Attend</strong></span>
+            </span>
+          </a>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link is-arrowless">
+              <span class="icon-text">
+                <span class="icon">
+                  <i class="fas fa-calendar-days"></i>
+                </span>
+                <span><strong>Participate</strong></span>
+              </span>
+            </a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="../content/call-for-papers.html">
+                <strong>Call For Papers</strong>
+              </a>
+            </div>
+          </div>
+          <a class="navbar-item" href="#">
+            <span class="icon-text">
+              <span class="icon">
+                <i class="fa-solid fa-hands-helping"></i>
+              </span>
+              <span><strong>Sponsors</strong></span>
+            </span>
+          </a>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link is-arrowless">
+              <span class="icon-text">
+                <span class="icon">
+                  <i class="fa-solid fa-info-circle"></i>
+                </span>
+                <span><strong>About</strong></span>
+              </span>
+            </a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="#">
+                <strong>Past Symposia</strong>
+              </a>
+              <a class="navbar-item" href="#">
+                <strong>Symposium Organizers</strong>
+              </a>
+              <a class="navbar-item" href="#">
+                <strong>Conference Policies</strong>
+              </a>
+              <a class="navbar-item" href="#">
+                <strong>Code of Conduct</strong>
+              </a>
+              <a class="navbar-item" href="#">
+                <strong>Questions</strong>
+              </a>
+            </div>
+          </div>
+        </div>
 
-    <div class="content m-5">
-      <h1>CSTG 2026 Call for Papers</h1>
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="button is-primary">
+                <strong>Sign up</strong>
+              </a>
+              <a class="button is-light">
+                Log in
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </nav>
+
+    <div class="container content m-5">
+      <div><h1 class="title is-1">CSTG 2026 Call for Papers</h1></div>
+
       <div class="mx-5">
         <p>The <strong>4th International Conference on Computer Science and
             Technology (CSTG '26)</strong> will be held on April 3-5, 2026, in
           Jihadara, Planet Bian, sponsored by Northeast Dharma Lineage.</p>
       </div>
 
-      <h2>Important Dates</h2>
+      <h2 class="title">Important Dates</h2>
       <div class="mx-5">
         <p><strong>Spring deadline:</strong></p>
         <ul>
@@ -45,7 +150,7 @@
         </ul>
       </div>
 
-      <h2>Overview</h2>
+      <h2 class="title">Overview</h2>
       <div class="mx-5">
         <p>
           CSTG aims to advance cutting-edge research and innovation in the field
@@ -60,7 +165,7 @@
         </p>
       </div>
 
-      <h2>Two Deadlines</h2>
+      <h2 class="title">Two Deadlines</h2>
       <div class="mx-5">
         <p>
           CSTG '26 offers authors the choice of two submission deadlines. Any
@@ -73,7 +178,7 @@
           deadline.</p>
       </div>
 
-      <h2>Submission Requirements</h2>
+      <h2 class="title">Submission Requirements</h2>
       <div class="mx-5">
         <p>
           All submissions to the Computer Science and Technology Conference
@@ -91,5 +196,9 @@
     </div>
 
     <footer class="footer"></footer>
+
+    <script src="https://kit.fontawesome.com/0a1fc3c71c.js"
+      crossorigin="anonymous"></script>
+
   </body>
 </html>

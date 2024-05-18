@@ -56,7 +56,7 @@ a:hover {
     align-items: center;
 }
 
-.container .title::after {
+.container > .title::after {
     content: '';
     display: block;
     padding: 5px 0;
