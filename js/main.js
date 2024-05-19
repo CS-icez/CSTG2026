@@ -10,6 +10,7 @@ const swiper = new Swiper('.swiper-container', {
 $(function () {
     initShowAll();
     initModal();
+    initSignin();
 })
 
 function initShowAll() {
@@ -24,7 +25,6 @@ function initShowAll() {
 }
 
 function initModal() {
-    console.log('initModal');
     function openModal($el) {
         $el.classList.add('is-active');
     }
@@ -48,7 +48,7 @@ function initModal() {
         });
     });
 
-    (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
+    (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot') || []).forEach(($close) => {
         const $target = $close.closest('.modal');
 
         $close.addEventListener('click', () => {
@@ -60,5 +60,14 @@ function initModal() {
         if(event.key === "Escape") {
             closeAllModals();
         }
+    });
+}
+
+function initSignin() {
+    $('#signinButton').on('click', function () {
+        const email = $('#signInEmail').val();
+        const password = $('#signInPassword').val();
+        console.log('Email:', email);
+        console.log('Password:', password);
     });
 }
