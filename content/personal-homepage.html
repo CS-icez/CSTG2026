@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Homepage</title>
+    <link rel="stylesheet" href="../css/all.css">
+</head>
+<body>
+    <nav class="navbar is-fixed-top" role="navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="index.html">
+                <img src="../images/logo.png" alt="Logo" width="112">
+            </a>
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="../content/index.html">
+              <span class="icon-text">
+                <span class="icon">
+                  <i class="fas fa-home"></i>
+                </span>
+              <span><strong>Home</strong></span>
+              </span>
+                </a>
+                <a class="navbar-item" href="../content/index.html#venue">
+              <span class="icon-text">
+                <span class="icon">
+                  <i class="fa-solid fa-plane"></i>
+                </span>
+              <span><strong>Attend</strong></span>
+              </span>
+                </a>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link is-arrowless">
+                <span class="icon-text">
+                  <span class="icon">
+                    <i class="fas fa-calendar-days"></i>
+                  </span>
+                  <span><strong>Participate</strong></span>
+                </span>
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="../content/call-for-papers.html">
+                            <strong>Call For Papers</strong>
+                        </a>
+                    </div>
+                </div>
+                <a class="navbar-item" href="../content/index.html#sponsor">
+              <span class="icon-text">
+                <span class="icon">
+                  <i class="fa-solid fa-hands-helping"></i>
+                </span>
+              <span><strong>Sponsors</strong></span>
+              </span>
+                </a>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link is-arrowless">
+                <span class="icon-text">
+                  <span class="icon">
+                    <i class="fa-solid fa-info-circle"></i>
+                  </span>
+                  <span><strong>About</strong></span>
+                </span>
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="../content/cstg-conferences.html">
+                            <strong>Past Conferences</strong>
+                        </a>
+                        <a class="navbar-item" href="../content/index.html#organizers">
+                            <strong>Conference Organizers</strong>
+                        </a>
+                        <a class="navbar-item" href="../content/conference-policies.html">
+                            <strong>Conference Policies</strong>
+                        </a>
+                        <a class="navbar-item" href="../content/conference-policies.html#codeOfConduct">
+                            <strong>Code of Conduct</strong>
+                        </a>
+                        <a class="navbar-item" href="../content/index.html#footer">
+                            <strong>Contact</strong>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-primary" href="../content/register.html">
+                            <strong>Sign up</strong>
+                        </a>
+                        <button class="button is-light js-modal-trigger" data-target="LogIn">
+                            Sign in
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <div id="navbarPlaceholder" style="height: 56px"></div>
+
+    <div class="block" style="display: flex; flex-direction: row">
+        <div class="container" style="display: flex; flex-direction: column; width: 30%; background-color: whitesmoke">
+            <img src="../images/peter.jpg" alt="Avatar" style="padding: 50px 50px; border-radius: 30%;">
+            <div class="content" style="width: 70%; margin-left: 15%">
+                <h2>Peter Geo</h2>
+                <div class="block" style="display: flex; flex-direction: row; margin-top: 50px">
+                    <span class="icon" style="font-size: 1.2rem">
+                        <i class="fas fa-envelope"></i>
+                    </span>
+                    <span style="margin-left: 10px">
+                        <strong>peter@gmail.com</strong>
+                    </span>
+                </div>
+                <div class="block" style="display: flex; flex-direction: row">
+                    <span class="icon" style="font-size: 1.2rem">
+                        <i class="fas fa-info-circle"></i>
+                    </span>
+                    <span style="margin-left: 10px">
+                        I am Peter Geo, Boya Professor of Computer Science at the Peking University. My research interests include computer networks and cryptography. I founded the CSTG conference series with Wode in 2023.
+                    </span>
+                </div>
+            </div>
+            <div style="height: 80px"></div>
+        </div>
+        <div class="container" style="width: 70%; flex-direction: column">
+            <div class="tabs is-centered is-boxed">
+                <ul>
+                    <li class="is-active" id="submissionPart">
+                        <a>
+                            <span class="icon is-small"><i class="fas fa-file-alt" aria-hidden="true"></i></span>
+                            <span>Submission</span>
+                        </a>
+                    </li>
+                    <li id="reviewPart">
+                        <a>
+                            <span class="icon is-small"><i class="fas fa-clipboard-check" aria-hidden="true"></i></span>
+                            <span>Review</span>
+                        </a>
+                    </li>
+                    <li id="messagePart">
+                        <a>
+                            <span class="icon is-small"><i class="fas fa-comments" aria-hidden="true"></i></span>
+                            <span>Message</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="submissions" class="block">
+                <div class="container container-display">
+                    <div class="title is-2">Your Submissions</div>
+                </div>
+                <div class="container" style="margin-top: 50px">
+                    <div style="padding: 0 100px; margin-bottom: 50px; display: flex; flex-direction: column">
+                        <span style="display: inline-block; margin: 5px 0">
+                            <strong style="font-size: 1.5rem"># 1</strong>
+                        </span>
+                        <span style="display: inline-block; margin: 5px 0">
+                            <strong style="font-size: 1.5rem">Grypto: A Novel Key Distribution Scheme to Avoid Man-in-middle Attacks</strong>
+                        </span>
+                        <span style="display: inline-block; margin: 10px 0">
+                            This paper proposes Grypto, a novel key distribution scheme to avoid man-in-middle attacks. Grypto jumps out of the traditional framework of crypography and proposes a theoretically absolutely secure operation to solve man-in-middle problem.
+                        </span>
+                        <span style="display: inline-block; margin: 5px 0;">
+                            <span class="tag is-success is-medium">Accepted</span>
+                        </span>
+                        <span style="display: inline-block; margin-top: 20px">
+                            <strong>Comments</strong>
+                        </span>
+                        <span style="display: inline-block; margin-top: 5px">
+                            Very Good! I like the idea of Grypto. It is a very innovative work.
+                        </span>
+                    </div>
+
+                    <div style="padding: 0 100px; margin-bottom: 50px; display: flex; flex-direction: column">
+                        <span style="display: inline-block; margin: 5px 0">
+                            <strong style="font-size: 1.5rem"># 2</strong>
+                        </span>
+                        <span style="display: inline-block; margin: 5px 0">
+                            <strong style="font-size: 1.5rem">ScaleSketch: Enabling Adaptive Network Measurement in Very Large Scale</strong>
+                        </span>
+                        <span style="display: inline-block; margin: 10px 0">
+                            This paper proposes ScaleSketch, an adaptive network measurement solution, which can be scaled up to a very large extent. We designs a wholy novel network measurement pattern, along with many techniques for in-production usage.
+                        </span>
+                        <span style="display: inline-block; margin: 5px 0;">
+                            <span class="tag is-danger is-medium">Rejected</span>
+                        </span>
+                        <span style="display: inline-block; margin-top: 20px">
+                            <strong>Comments</strong>
+                        </span>
+                        <span style="display: inline-block; margin-top: 5px">
+                            It's totally useless. The idea of ScaleSketch is not practical at all.
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="reviews" class="block" style="display: none">
+                <div class="container container-display">
+                    <div class="title is-2">Your Reviews</div>
+                </div>
+                <div class="container" style="margin-top: 50px">
+                    <div style="padding: 0 100px; margin-bottom: 50px">
+                        <span style="display: inline-block; margin: 5px 0">
+                            <strong style="font-size: 1.5rem"># 1</strong>
+                        </span>
+                        <span style="display: inline-block; margin: 5px 0">
+                            <strong style="font-size: 1.5rem">Grypto: A Novel Key Distribution Scheme to Avoid Man-in-middle Attacks</strong>
+                        </span>
+                        <span style="display: inline-block; margin: 10px 0">
+                            This paper proposes Grypto, a novel key distribution scheme to avoid man-in-middle attacks. Grypto jumps out of the traditional framework of crypography and proposes a theoretically absolutely secure operation to solve man-in-middle problem.
+                        </span>
+                        <a href="../images/peter.jpg" style="margin: 10px 0" download="peter.jpg">View Details</a>
+                        <div class="field" style="margin-top: 20px">
+                            <label class="label" style="font-size: 1.3rem">Comment</label>
+                            <div class="control">
+                                <textarea class="textarea"></textarea>
+                            </div>
+                        </div>
+                        <button class="button is-primary"><strong>Commit</strong></button>
+                    </div>
+
+                    <div style="padding: 0 100px; margin-bottom: 50px">
+                        <span style="display: inline-block; margin: 5px 0">
+                            <strong style="font-size: 1.5rem"># 2</strong>
+                        </span>
+                        <span style="display: inline-block; margin: 5px 0">
+                            <strong style="font-size: 1.5rem">ScaleSketch: Enabling Adaptive Network Measurement in Very Large Scale</strong>
+                        </span>
+                        <span style="display: inline-block; margin: 10px 0">
+                            This paper proposes ScaleSketch, an adaptive network measurement solution, which can be scaled up to a very large extent. We designs a wholy novel network measurement pattern, along with many techniques for in-production usage.
+                        </span>
+                        <a href="../images/peter.jpg" style="margin: 10px 0" download="peter.jpg">View Details</a>
+                        <div class="field" style="margin-top: 20px">
+                            <label class="label" style="font-size: 1.3rem">Comment</label>
+                            <div class="control">
+                                <textarea class="textarea"></textarea>
+                            </div>
+                        </div>
+                        <button class="button is-primary"><strong>Commit</strong></button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="messages" class="block" style="display: none">
+                <div class="container container-display">
+                    <div class="title is-2">Your Messages</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="LogIn" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Sign in to CSTG 2026</p>
+                <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                <label class="label">Email address</label>
+                <label>
+                    <input class="input" type="email" id="signinEmail" placeholder="e.g, kai@example.com">
+                </label>
+                <label class="label">Password</label>
+                <label>
+                    <input class="input" type="password" id="signinPassword" placeholder="********">
+                </label>
+                <label class="checkbox" style="margin-top: 10px">
+                    <input type="checkbox">
+                    I agree to the <a href="../content/conference-policies.html">policies</a> of CSTG 2026.
+                </label>
+            </section>
+            <footer class="modal-card-foot">
+                <div class="buttons">
+                    <button id="signinButton" class="button is-primary">Sign in</button>
+                    <button class="button">Cancel</button>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <script src="https://kit.fontawesome.com/0a1fc3c71c.js" crossorigin="anonymous"></script>
+    <script src="../js/signin.js"></script>
+    <script src="../js/personal.js"></script>
+</body>
+</html>
