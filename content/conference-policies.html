@@ -8,7 +8,7 @@
 
 </head>
 <body>
-  <nav class="navbar" role="navigation">
+  <nav class="navbar is-fixed-top" role="navigation">
     <div class="navbar-brand">
       <a class="navbar-item" href="index.html">
         <img src="../images/logo.png" alt="Logo" width="112">
@@ -92,18 +92,20 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <a class="button is-primary">
+            <button class="button is-primary">
               <strong>Sign up</strong>
-            </a>
-            <a class="button is-light">
-              Log in
-            </a>
+            </button>
+            <button class="button is-light js-modal-trigger" data-target="SignIn">
+              Sign in
+            </button>
           </div>
         </div>
       </div>
 
     </div>
   </nav>
+
+  <div id="navbarPlaceholder" style="height: 56px"></div>
 
     <div class="content m-5">
       <div><h1 class="title is-1">Conference Policies</h1></div>
@@ -204,6 +206,40 @@
     </div>
 
       <footer class="footer"></footer>
-      <script src="https://kit.fontawesome.com/0a1fc3c71c.js" crossorigin="anonymous"></script>
+
+  <div id="SignIn" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Sign in to CSTG 2026</p>
+        <button class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <label class="label">Email address</label>
+        <label>
+          <input class="input" type="text" placeholder="e.g, kai@example.com">
+        </label>
+        <label class="label">Password</label>
+        <label>
+          <input class="input" type="password" placeholder="********">
+        </label>
+        <label class="checkbox" style="margin-top: 10px">
+          <input type="checkbox">
+          I agree to the <a href="../content/conference-policies.html">policies</a> of CSTG 2026.
+        </label>
+      </section>
+      <footer class="modal-card-foot">
+        <div class="buttons">
+          <button class="button is-primary">Sign in</button>
+          <button class="button">Cancel</button>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/3.3.1/js/swiper.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+  <script src="https://kit.fontawesome.com/0a1fc3c71c.js" crossorigin="anonymous"></script>
+  <script src="../js/main.js"></script>
 </body>
 </html>
