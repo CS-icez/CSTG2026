@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Personal Homepage
+{% endblock %}
+
+{% block link %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/all.css') }}">
+{% endblock %}
+
+{% block script %}
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+<script src="https://kit.fontawesome.com/0a1fc3c71c.js"
+    crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='js/signin.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+
+{% include 'components/navbar.html' %}
+
+<div class="block container-display" style="flex-direction: row">
+    <div class="container container-display"
+        style="width: 30%; height: 100%; background-color: whitesmoke">
+        <img src="{{ url_for('static', filename='images/peter.jpg') }}"
+            alt="Avatar" style="padding: 50px 50px; border-radius: 30%;">
+        <div class="content" style="width: 70%">
+            <h2>Peter Geo</h2>
+            <p><strong style="font-size: 1.2rem"><i class="fas fa-envelope"></i>
+                    peter@gmail.com</strong></p>
+        </div>
+    </div>
+    <div class="container" style="width: 70%">
+    </div>
+</div>
+
+{% include 'auth/signin.html' %}
+
+{% endblock %}

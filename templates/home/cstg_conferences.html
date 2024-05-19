@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %}
+CSTG Conferences
+{% endblock %}
+
+{% block link %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/all.css') }}">
+<style>
+  td {
+    vertical-align: middle;
+  }
+</style>
+{% endblock %}
+
+{% block script %}
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+<script src="https://kit.fontawesome.com/0a1fc3c71c.js"
+  crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='js/signin.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+
+{% include 'components/navbar.html' %}
+
+<div class="content m-5">
+  <div><h1 class="title is-1">CSTG Conferences</h1></div>
+
+  <table class="table is-bordered is-striped is-hoverable"
+    style="font-size: 1.1rem">
+    <tbody>
+      <tr>
+        <td>2026</td>
+        <td class="has-text-weight-medium"><a href="{{ url_for('home.index') }}">4th
+            International Conference on Computer Science and
+            Technology</a></td>
+        <td>April 3, 2026-April 5, 2026 | Jihadara, Planet Bian</td>
+      </tr>
+      <tr>
+        <td>2025</td>
+        <td class="has-text-weight-medium"><a
+            href="{{ url_for('static', filename='cstg25/index.html') }}">3rd
+            International Conference on Computer Science and
+            Technology</a></td>
+        <td>March 14, 2025-March 17, 2025 | Jerusalem, Israel and
+          Palestine</td>
+      </tr>
+      <tr>
+        <td>2024</td>
+        <td class="has-text-weight-medium"><a
+            href="{{ url_for('static', filename='cstg24/index.html') }}">2nd
+            International Conference on Computer Science and
+            Technology</a></td>
+        <td>March 15, 2024-March 17, 2024 | Beijing, China</td>
+      </tr>
+      <tr>
+        <td>2023</td>
+        <td class="has-text-weight-medium">1st International
+          Conference on
+          Computer Science and Technology</td>
+        <td>May 31, 2023 |</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="mb-6"></div>
+
+{% include 'components/footer.html' %}
+
+{% include 'auth/signin.html' %}
+
+{% endblock %}

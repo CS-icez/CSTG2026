@@ -1,0 +1,221 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Submit Your Paper
+{% endblock %}
+
+{% block link %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/all.css') }}">
+{% endblock %}
+
+{% block script %}
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+<script src="https://kit.fontawesome.com/0a1fc3c71c.js"
+    crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='js/submit.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+
+<nav class="navbar is-fixed-top" role="navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="{{ url_for('home.index') }}">
+            <img src="{{ url_for('static', filename='images/logo.png') }}"
+                alt="Logo" width="112">
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu"
+            aria-expanded="false" data-target="navbarMenu">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+</nav>
+
+<div id="navbarPlaceholder" style="height: 56px"></div>
+
+<div class="block container-display">
+    <div class="title is-2">
+        Submit Your Paper
+        &nbsp;
+        <span class="icon">
+            <i class="fa-solid fa-paper-plane"></i>
+        </span>
+    </div>
+</div>
+
+<form class="container" style="padding: 0 150px"
+    action="{{ url_for('home.submit') }}" method="post"
+    enctype="multipart/form-data">
+    <div class="field">
+        <label class="label" style="font-size: 1.5rem">Title</label>
+        <div class="control">
+            <input class="input" type="text" id="submitTitle" name="title"
+                required>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label" style="font-size: 1.5rem">Abstract</label>
+        <div class="control">
+            <textarea class="textarea"
+                placeholder="e.g. This paper presents ......"
+                id="submitAbstract" name="abstract" required></textarea>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label" style="font-size: 1.5rem">Content</label>
+        <div class="control">
+            <div class="file">
+                <label class="file-label">
+                    <input class="file-input" type="file" id="submitContent"
+                        name="file" required />
+                    <span class="file-cta">
+                        <span class="file-icon">
+                            <i class="fas fa-file-upload"></i>
+                        </span>
+                        <span class="file-label"> Choose a file… </span>
+                    </span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="field" style="margin-top: 30px">
+        <label class="label" style="font-size: 1.5rem">Topics</label>
+        <div class="control">
+            <label class="checkbox">
+                <input type="checkbox" id="AI">
+                &nbsp;AI
+            </label>
+        </div>
+
+        <div class="control" style="margin-top: 8px">
+            <label class="checkbox">
+                <input type="checkbox" id="ComputerArchitecture">
+                &nbsp;Computer Architecture
+            </label>
+        </div>
+
+        <div class="control" style="margin-top: 8px">
+            <label class="checkbox">
+                <input type="checkbox" id="ComputerNetworks">
+                &nbsp;Computer Networks
+            </label>
+        </div>
+
+        <div class="control" style="margin-top: 8px">
+            <label class="checkbox">
+                <input type="checkbox" id="ComputerSecurity">
+                &nbsp;Computer Security
+            </label>
+        </div>
+
+        <div class="control" style="margin-top: 8px">
+            <label class="checkbox">
+                <input type="checkbox" id="Databases">
+                &nbsp;Databases
+            </label>
+        </div>
+
+        <div class="control" style="margin-top: 8px">
+            <label class="checkbox">
+                <input type="checkbox" id="DesignAutomation">
+                &nbsp;Design Automation
+            </label>
+        </div>
+
+        <div class="control" style="margin-top: 8px">
+            <label class="checkbox">
+                <input type="checkbox" id="EmbeddedReal-timeSystems">
+                &nbsp;Embedded & Real-time Systems
+            </label>
+        </div>
+
+        <div class="control" style="margin-top: 8px">
+            <label class="checkbox">
+                <input type="checkbox" id="High-performanceComputing">
+                &nbsp;High-performance Computing
+            </label>
+        </div>
+
+        <div class="control" style="margin-top: 8px">
+            <label class="checkbox">
+                <input type="checkbox" id="MobileComputing">
+                &nbsp;Mobile Computing
+            </label>
+        </div>
+
+        <div class="control" style="margin-top: 8px">
+            <label class="checkbox">
+                <input type="checkbox" id="MeasurementPerformanceAnalysis">
+                &nbsp;Measurement & Performance Analysis
+            </label>
+        </div>
+
+        <div class="control" style="margin-top: 8px">
+            <label class="checkbox">
+                <input type="checkbox" id="OperatingSystems">
+                &nbsp;Operating Systems
+            </label>
+        </div>
+
+        <div class="control" style="margin-top: 8px">
+            <label class="checkbox">
+                <input type="checkbox" id="ProgrammingLanguages">
+                &nbsp;Programming Languages
+            </label>
+        </div>
+
+        <div class="control" style="margin-top: 8px">
+            <label class="checkbox">
+                <input type="checkbox" id="SoftwareEngineering">
+                &nbsp;Software Engineering
+            </label>
+        </div>
+
+        <div class="control" style="margin-top: 8px">
+            <label class="checkbox">
+                <input type="checkbox" id="AlgorithmsComplexity">
+                &nbsp;Algorithms & Complexity
+            </label>
+        </div>
+
+        <div class="control" style="margin-top: 8px">
+            <label class="checkbox">
+                <input type="checkbox" id="Cryptography">
+                &nbsp;Cryptography
+            </label>
+        </div>
+
+        <div class="control" style="margin-top: 8px">
+            <label class="checkbox">
+                <input type="checkbox" id="LogicVerification">
+                &nbsp;Logic & Verification
+            </label>
+        </div>
+
+        <div class="control" style="margin-top: 8px">
+            <label class="checkbox">
+                <input type="checkbox" id="InterdisciplinaryAreas">
+                &nbsp;Interdisciplinary Areas
+            </label>
+        </div>
+    </div>
+
+    <div class="field is-grouped" style="margin-top: 50px">
+        <div class="control">
+            <button id="submitButton" class="button is-primary"
+                type="submit"><strong>Submit</strong></button>
+        </div>
+        <div class="control">
+            <a href="{{ url_for('home.index') }}"><button
+                    class="button is-light">Cancel</button></a>
+        </div>
+    </div>
+</form>
+
+<div id="bottomHolder" style="height: 100px"></div>
+
+{% endblock %}

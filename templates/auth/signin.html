@@ -1,0 +1,36 @@
+<div id="SignIn" class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Sign in to CSTG 2026</p>
+      <button class="delete" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <form class="container" action="{{ url_for('auth.signin') }}" method="post">
+        <label class="label">Email address</label>
+        <label>
+          <input class="input" type="email" id="signinEmail"
+            placeholder="e.g, kai@example.com" name="email" required>
+        </label>
+        <label class="label">Password</label>
+        <label>
+          <input class="input" type="password" id="signinPassword"
+            placeholder="********" name="passwd" required>
+        </label>
+        <label class="checkbox" style="margin-top: 10px">
+          <input type="checkbox" required>
+          I agree to the <a
+            href="{{ url_for('home.conference_policies') }}">policies</a> of
+          CSTG 2026.
+        </label>
+        <div class="buttons">
+          <button id="signinButton" class="button is-primary" type="submit">Sign
+            in</button>
+          <button class="button">Cancel</button>
+        </div>
+      </form>
+    </section>
+    <footer class="modal-card-foot">
+    </footer>
+  </div>
+</div>

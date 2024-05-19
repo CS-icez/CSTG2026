@@ -1,0 +1,101 @@
+<nav class="navbar is-fixed-top" role="navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="{{ url_for('home.index') }}">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo"
+        width="112">
+    </a>
+    <a role="button" class="navbar-burger" aria-label="menu"
+      aria-expanded="false" data-target="navbarMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarMenu" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="{{ url_for('home.index') }}">
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fas fa-home"></i>
+          </span>
+          <span><strong>Home</strong></span>
+        </span>
+      </a>
+      <a class="navbar-item" href="{{ url_for('home.index') }}#venue">
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fa-solid fa-plane"></i>
+          </span>
+          <span><strong>Attend</strong></span>
+        </span>
+      </a>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link is-arrowless">
+          <span class="icon-text">
+            <span class="icon">
+              <i class="fas fa-calendar-days"></i>
+            </span>
+            <span><strong>Participate</strong></span>
+          </span>
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="{{ url_for('home.call_for_papers') }}">
+            <strong>Call For Papers</strong>
+          </a>
+        </div>
+      </div>
+      <a class="navbar-item" href="{{ url_for('home.index') }}#sponsor">
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fa-solid fa-hands-helping"></i>
+          </span>
+          <span><strong>Sponsors</strong></span>
+        </span>
+      </a>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link is-arrowless">
+          <span class="icon-text">
+            <span class="icon">
+              <i class="fa-solid fa-info-circle"></i>
+            </span>
+            <span><strong>About</strong></span>
+          </span>
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="{{ url_for('home.cstg_conferences') }}">
+            <strong>Past Conferences</strong>
+          </a>
+          <a class="navbar-item" href="{{ url_for('home.index') }}#organizers">
+            <strong>Conference Organizers</strong>
+          </a>
+          <a class="navbar-item"
+            href="{{ url_for('home.conference_policies') }}">
+            <strong>Conference Policies</strong>
+          </a>
+          <a class="navbar-item"
+            href="{{ url_for('home.conference_policies') }}#codeOfConduct">
+            <strong>Code of Conduct</strong>
+          </a>
+          <a class="navbar-item" href="{{ url_for('home.index') }}#footer">
+            <strong>Contact</strong>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-primary" href="{{ url_for('auth.signup') }}">
+            <strong>Sign up</strong>
+          </a>
+          <button class="button is-light js-modal-trigger" data-target="SignIn">
+            Sign in
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div id="navbarPlaceholder" style="height: 56px"></div>

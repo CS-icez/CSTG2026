@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+
+{% block title %}
+CSTG '26 Conference Polices
+{% endblock %}
+
+{% block link %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/all.css') }}">
+{% endblock %}
+
+{% block script %}
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+<script src="https://kit.fontawesome.com/0a1fc3c71c.js"
+  crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='js/signin.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+
+{% include 'components/navbar.html' %}
+
+<div class="content m-5">
+  <div><h1 class="title is-1">Conference Policies</h1></div>
+
+  <h2 class="title ml-2">Code of Conduct</h2>
+  <div class="mx-5">
+    <p>
+      All participants, including attendees, speakers, sponsors, and
+      volunteers, are required to adhere to the following code of conduct.
+      We are committed to providing a harassment-free conference experience
+      for everyone, regardless of gender, age, sexual orientation,
+      disability, physical appearance, race, or religion.
+    </p>
+    <p>
+      Harassment of conference participants in any form will not be
+      tolerated. This includes offensive verbal comments, deliberate
+      intimidation, stalking, following, harassing photography or recording,
+      sustained disruption of talks or other events, inappropriate physical
+      contact, and unwelcome sexual attention.
+    </p>
+  </div>
+
+  <h2 class="title ml-2">Submission Guidelines</h2>
+  <div class="mx-5">
+    <p>
+      All submissions must be original and not simultaneously submitted to
+      another journal or conference. The following paper categories are
+      welcome:
+    </p>
+    <ul>
+      <li>Full papers: These should present completed research results or
+        case studies.</li>
+      <li>Short papers: These should present work in progress or novel
+        ideas.</li>
+      <li>Posters: These should summarize research at a stage where feedback
+        can be beneficial.</li>
+    </ul>
+    <p>
+      Submissions must follow the formatting guidelines provided on the
+      conference website and be within the specified page limits.
+    </p>
+  </div>
+
+  <h2 class="title ml-2">Review Process</h2>
+  <div class="mx-5">
+    <p>
+      All submitted papers will undergo a rigorous peer-review process. Each
+      submission will be reviewed by at least three independent reviewers.
+      The review process is double-blind, meaning both the authors' and
+      reviewers' identities will be kept confidential.
+    </p>
+    <p>
+      Reviewers will evaluate submissions based on their originality,
+      significance, technical soundness, and clarity of presentation.
+      Authors will receive feedback and may be required to make revisions
+      before final acceptance.
+    </p>
+  </div>
+
+  <h2 class="title ml-2">Registration Policy</h2>
+  <div class="mx-5">
+    <p>
+      All attendees must register for the conference. Early bird
+      registration discounts are available until the specified date.
+      Registration fees cover access to all sessions, conference
+      materials,
+      coffee breaks, and lunches. Additional fees may apply for workshops,
+      tutorials, and social events.
+    </p>
+    <p>
+      Cancellations received before the specified date will receive a full
+      refund minus a processing fee. No refunds will be provided for
+      cancellations received after this date.
+    </p>
+  </div>
+
+  <h2 class="title ml-2">Privacy Policy</h2>
+  <div class="mx-5">
+    <p>
+      We are committed to protecting your privacy. Any personal information
+      collected during the registration process will be used solely for the
+      purposes of conference administration and communication. We will not
+      share your personal information with third parties without your
+      consent.
+    </p>
+  </div>
+
+  <h2 class="title ml-2">Contact Us</h2>
+  <div class="mx-5">
+    <p>
+      If you have any questions about the conference policies, please
+      contact us at <a
+        href="mailto:cstg2026@gmail.com">cstg2026@gmail.com</a>.
+    </p>
+  </div>
+
+  <div class="mb-6"></div>
+</div>
+
+{% include 'components/footer.html' %}
+
+{% include 'auth/signin.html' %}
+
+{% endblock %}

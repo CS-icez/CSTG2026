@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Join CSTG '26
+{% endblock %}
+
+{% block link %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/all.css') }}">
+{% endblock %}
+
+{% block script %}
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+<script src="https://kit.fontawesome.com/0a1fc3c71c.js"
+    crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='js/signin.js') }}"></script>
+<script src="{{ url_for('static', filename='js/signup.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+
+<nav class="navbar is-fixed-top" role="navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="{{ url_for('home.index') }}">
+            <img src="{{ url_for('static', filename='images/logo.png') }}"
+                alt="Logo" width="112">
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu"
+            aria-expanded="false" data-target="navbarMenu">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+    <div id="navbarMenu" class="navbar-menu">
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <div class="container" style="margin-right: 20px">
+                    <span class="subtitle is-6">Already have an account?</span>
+                </div>
+                <button class="button is-light js-modal-trigger"
+                    data-target="SignIn">
+                    Sign in
+                </button>
+            </div>
+        </div>
+
+    </div>
+</nav>
+
+{% include 'auth/signin.html' %}
+
+<div id="navbarPlaceholder" style="height: 56px"></div>
+
+<div class="block container-display">
+    <div class="title is-2">
+        Welcome to CSTG 2026
+        &nbsp;
+        <span class="icon">
+            <i class="fa-regular fa-handshake"></i>
+        </span>
+    </div>
+</div>
+
+<form class="container" style="padding: 0 150px"
+    action="{{ url_for('auth.signup') }}" method="post">
+    <div class="field">
+        <label class="label" style="font-size: 1.5rem">Name</label>
+        <div class="control has-icons-left">
+            <input class="input" type="text" id="signupName" name="name"
+                required>
+            <span class="icon is-small is-left">
+                <i class="fas fa-user"></i>
+            </span>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label" style="font-size: 1.5rem">Gender</label>
+        <div class="control">
+            <div class="select">
+                <select id="signupGender" name="gender">
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label" style="font-size: 1.5rem">Email</label>
+        <div class="control has-icons-left">
+            <input class="input" type="email" id="signupEmail" name="email"
+                required>
+            <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+            </span>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label" style="font-size: 1.5rem">Password</label>
+        <div class="control has-icons-left">
+            <input class="input" type="password" id="signupPassword"
+                name="passwd" required>
+            <span class="icon is-small is-left">
+                <i class="fas fa-key"></i>
+            </span>
+        </div>
+        <!-- <p class="help" style="font-size: 0.8rem">Valid passwords should contain
+            uppercase, lowercase letters, and numbers</p> -->
+    </div>
+
+    <div class="field">
+        <label class="label" style="font-size: 1.5rem">Profile</label>
+        <div class="control">
+            <textarea class="textarea" placeholder="e.g. I am ......"
+                id="signinProfile" name="profile" required></textarea>
+        </div>
+    </div>
+
+    <div class="field" style="margin-top: 30px">
+        <div class="control">
+            <label class="checkbox">
+                <input type="checkbox" required>
+                I agree to the <a
+                    href="../content/conference_policies.html">policies</a> of
+                CSTG 2026.
+            </label>
+        </div>
+    </div>
+
+    <div class="field is-grouped" style="margin-top: 20px">
+        <div class="control">
+            <button id="signupButton"
+                class="button is-primary" type="submit"><strong>Sign
+                    up</strong></button>
+        </div>
+        <div class="control">
+            <a href="{{ url_for('home.index') }}"><button
+                    class="button is-light">Cancel</button></a>
+        </div>
+    </div>
+</form>
+
+<div id="bottomHolder" style="height: 100px"></div>
+
+{% endblock %}

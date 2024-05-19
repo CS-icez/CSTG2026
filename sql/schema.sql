@@ -1,3 +1,5 @@
+DROP DATABASE IF EXISTS cstg;
+CREATE DATABASE cstg;
 use cstg;
 
 CREATE TABLE usr (
@@ -5,17 +7,20 @@ CREATE TABLE usr (
     name VARCHAR(50) NOT NULL,
     gender ENUM('M', 'F') NOT NULL,
     email VARCHAR(50) NOT NULL,
-    passwd VARCHAR(50) NOT NULL,
-    type ENUM('A', 'R')
+    passwd VARCHAR(200) NOT NULL,
+    type ENUM('A', 'R'),
+    profile TEXT NOT NULL
 );
 
 CREATE TABLE paper (
     paper_id INT PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(50) NOT NULL,
     abstract TEXT NOT NULL,
-    status ENUM('P', 'A', 'R') NOT NULL,
-    reviewer_id INT NOT NULL,
-    FOREIGN KEY (reviewer_id) REFERENCES usr(usr_id)
+    filename VARCHAR(50) NOT NULL,
+    /* reviewer_id INT NOT NULL, */
+    status ENUM('P', 'A', 'R') NOT NULL DEFAULT 'P',
+    comment TEXT
+    /* FOREIGN KEY (reviewer_id) REFERENCES usr(usr_id) */
 );
 
 CREATE TABLE publishes (
