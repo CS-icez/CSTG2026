@@ -94,6 +94,16 @@
           </button>
         </div>
       </div>
+      <!-- If user has signed in, show that tag below and replace the name. -->
+      <div class="navbar-item" style="display: none">
+        <div>
+          <a href="{{ url_for('home.personal_homepage') }}">
+            <div class="tag is-primary is-light is-medium is-hoverable">
+              Hello, Peter Geo
+            </div>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </nav>

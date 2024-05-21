@@ -81,3 +81,28 @@ a:hover {
 .icon > a:hover {
     box-shadow: none;
 }
+
+.media-content > a {
+    color: black;
+}
+
+.media-content > a:hover {
+    color: rgb(0, 173, 147);
+    box-shadow: none;
+}
+
+.media-content > a strong {
+    color: black;
+}
+
+.media-content > a small {
+    color: black;
+}
+
+.is-scalable:hover {
+    transform: scale(1.05);
+}
+
+.cell {
+    margin: 10px 10px;
+}

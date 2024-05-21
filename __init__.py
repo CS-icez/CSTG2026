@@ -17,5 +17,8 @@ app.register_blueprint(home.bp)
 from . import auth
 app.register_blueprint(auth.bp)
 
+from . import forum
+app.register_blueprint(forum.bp)
+
 def store_file(file):
     return files.save(file)
