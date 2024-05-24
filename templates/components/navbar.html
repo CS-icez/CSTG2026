@@ -41,6 +41,12 @@
           <a class="navbar-item" href="{{ url_for('home.call_for_papers') }}">
             <strong>Call For Papers</strong>
           </a>
+          <a class="navbar-item" href="{{ url_for('home.call_for_papers') }}#importantDates">
+            <strong>Important Dates</strong>
+          </a>
+          <a class="navbar-item" href="{{ url_for('home.submit') }}">
+            <strong>Submit Your Work</strong>
+          </a>
         </div>
       </div>
       <a class="navbar-item" href="{{ url_for('home.index') }}#sponsor">
@@ -49,6 +55,14 @@
             <i class="fa-solid fa-hands-helping"></i>
           </span>
           <span><strong>Sponsors</strong></span>
+        </span>
+      </a>
+      <a class="navbar-item" href="{{ url_for('forum.index') }}">
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fa-solid fa-comments"></i>
+          </span>
+          <span><strong>Forum</strong></span>
         </span>
       </a>
       <div class="navbar-item has-dropdown is-hoverable">
@@ -75,10 +89,10 @@
             href="{{ url_for('home.conference_policies') }}#codeOfConduct">
             <strong>Code of Conduct</strong>
           </a>
-          <a class="navbar-item"
+          <!-- <a class="navbar-item"
              href="{{ url_for('forum.index') }}">
             <strong>Official Forum</strong>
-          </a>
+          </a> -->
           <a class="navbar-item" href="{{ url_for('home.index') }}#footer">
             <strong>Contact</strong>
           </a>
