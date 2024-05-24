@@ -6,6 +6,7 @@ from CSTG2026.db import get_db
 
 bp = Blueprint('home', __name__, url_prefix='/home')
 
+@bp.route('/')
 @bp.route('/index')
 def index():
     return render_template('home/index.html')

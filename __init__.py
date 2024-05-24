@@ -20,5 +20,7 @@ app.register_blueprint(auth.bp)
 from . import forum
 app.register_blueprint(forum.bp)
 
+app.add_url_rule('/', endpoint='home.index')
+
 def store_file(file):
     return files.save(file)
