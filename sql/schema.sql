@@ -17,10 +17,10 @@ CREATE TABLE paper (
     title VARCHAR(50) NOT NULL,
     abstract TEXT NOT NULL,
     filename VARCHAR(50) NOT NULL,
-    /* reviewer_id INT NOT NULL, */
+    reviewer_id INT NOT NULL,
     status ENUM('P', 'A', 'R') NOT NULL DEFAULT 'P',
-    comment TEXT
-    /* FOREIGN KEY (reviewer_id) REFERENCES usr(usr_id) */
+    comment TEXT,
+    FOREIGN KEY (reviewer_id) REFERENCES usr(usr_id)
 );
 
 CREATE TABLE publishes (

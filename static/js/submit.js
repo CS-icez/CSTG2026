@@ -17,6 +17,7 @@ function initAddAuthor() {
         input.type = 'email';
         input.id = 'author' + authorCount;
         input.name = 'author' + authorCount;
+        input.placeholder = 'kai@example.com'
         input.required = true;
 
         let button = document.createElement('button');

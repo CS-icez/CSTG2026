@@ -1,8 +1,9 @@
 from flask import (
-    Blueprint, render_template, request, redirect, url_for, g
+    Blueprint, render_template, request, redirect, url_for, g, flash
 )
 
 from CSTG2026.db import get_db
+from random import randint
 
 bp = Blueprint('home', __name__, url_prefix='/home')
 
@@ -36,6 +37,11 @@ def submit():
     error = None
     db = get_db()
 
+    authors = []
+    for key in request.form:
+        if key.startswith('author'):
+            authors.append(request.form[key])
+
     with db.cursor() as cursor:
         if not title:
             error = 'Title is required.'
@@ -43,17 +49,52 @@ def submit():
             error = 'Abstract is required.'
         elif not file:
             error = 'File is required.'
+        elif authors == []:
+            error = 'Authors are required.'
 
         if error is not None:
             flash(error)
             return render_template('home/submit.html')
+        
+        ids = []
+        for author in authors:
+            cursor.execute(
+                'SELECT usr_id FROM usr WHERE email = %s',
+                (author,)
+            )
+            item = cursor.fetchone()
+            if item is None:
+                error = 'Author not found: ' + author
+                flash(error)
+                return render_template('home/submit.html')
+            ids.append(item[0])
 
         filename = store_file(file)
-        cursor.execute(
-            'INSERT INTO paper (title, abstract, filename) VALUES (%s, %s, %s)',
-            (title, abstract, filename)
-        )
-        db.commit()
+        try:
+            placeholder = ', '.join(['%s'] * len(ids))
+            cursor.execute(
+                f"SELECT usr_id FROM usr WHERE type = 'R' and email NOT IN ({placeholder})",
+                ids
+            )
+            reviewers = cursor.fetchall()
+            assert len(reviewers) > 0
+            idx = randint(0, len(reviewers) - 1)
+
+            cursor.execute(
+                'INSERT INTO paper (title, abstract, filename, reviewer_id) VALUES (%s, %s, %s, %s)',
+                (title, abstract, filename, reviewers[idx][0])
+            )
+            paper_id = cursor.lastrowid
+            for id in ids:
+                cursor.execute(
+                    'INSERT INTO publishes (usr_id, paper_id) VALUES (%s, %s)',
+                    (id, paper_id)
+                )
+            db.commit()
+        except Exception as e:
+            db.rollback()
+            print(e)
+
         return redirect(url_for('home.index'))
     
 @bp.route('/personal_homepage')

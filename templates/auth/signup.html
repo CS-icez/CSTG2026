@@ -64,10 +64,10 @@ Join CSTG '26
 <form class="container" style="padding: 0 150px"
     action="{{ url_for('auth.signup') }}" method="post">
     <div class="field">
-        <label class="label" style="font-size: 1.5rem">Name</label>
+        <label class="label" style="font-size: 1.5rem">Full Name</label>
         <div class="control has-icons-left">
             <input class="input" type="text" id="signupName" name="name"
-                required>
+                placeholder="Peter Irving" required>
             <span class="icon is-small is-left">
                 <i class="fas fa-user"></i>
             </span>
@@ -90,7 +90,7 @@ Join CSTG '26
         <label class="label" style="font-size: 1.5rem">Email</label>
         <div class="control has-icons-left">
             <input class="input" type="email" id="signupEmail" name="email"
-                required>
+                placeholder="kai@example.com" required>
             <span class="icon is-small is-left">
                 <i class="fas fa-envelope"></i>
             </span>
@@ -101,7 +101,7 @@ Join CSTG '26
         <label class="label" style="font-size: 1.5rem">Password</label>
         <div class="control has-icons-left">
             <input class="input" type="password" id="signupPassword"
-                name="passwd" required>
+                name="passwd" placeholder="********" required>
             <span class="icon is-small is-left">
                 <i class="fas fa-key"></i>
             </span>
