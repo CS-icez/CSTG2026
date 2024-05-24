@@ -1,5 +1,5 @@
 from flask import (
-    Blueprint, render_template, request, redirect, url_for
+    Blueprint, render_template, request, redirect, url_for, g
 )
 
 from CSTG2026.db import get_db
@@ -9,6 +9,7 @@ bp = Blueprint('home', __name__, url_prefix='/home')
 @bp.route('/')
 @bp.route('/index')
 def index():
+    print(g.usr)
     return render_template('home/index.html')
 
 @bp.route('/call_for_papers')

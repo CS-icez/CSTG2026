@@ -21,7 +21,7 @@ def signup():
     email = request.form['email']
     passwd = request.form['passwd']
     profile = request.form['profile']
-    type = 'A'
+    type = request.form['role']
     db = get_db()
     error = None
 
@@ -95,9 +95,9 @@ def load_logged_in_user():
     if usr_id is None:
         g.usr = None
     else:
-        with get_db().cursor as cursor:
+        with get_db().cursor() as cursor:
             cursor.execute(
-                'SELECT * FROM usr WHERE id = ?', (usr_id,)
+                'SELECT * FROM usr WHERE usr_id = %s', (usr_id,)
             )
             g.usr = cursor.fetchone()
 

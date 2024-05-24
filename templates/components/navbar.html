@@ -1,8 +1,7 @@
 <nav class="navbar is-fixed-top" role="navigation">
   <div class="navbar-brand">
     <a class="navbar-item" href="{{ url_for('home.index') }}">
-      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo"
-        width="112">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
     </a>
     <a role="button" class="navbar-burger" aria-label="menu"
       aria-expanded="false" data-target="navbarMenu">
@@ -88,6 +87,18 @@
     </div>
 
     <div class="navbar-end">
+      {% if g.usr %}
+      <!-- If user has signed in, show that tag below and replace the name. -->
+      <div class="navbar-item">
+        <div>
+          <a href="{{ url_for('home.personal_homepage') }}">
+            <div class="tag is-primary is-light is-medium is-hoverable">
+              Hello, Peter Geo
+            </div>
+          </a>
+        </div>
+      </div>
+      {% else %}
       <div class="navbar-item">
         <div class="buttons">
           <a class="button is-primary" href="{{ url_for('auth.signup') }}">
@@ -98,16 +109,7 @@
           </button>
         </div>
       </div>
-      <!-- If user has signed in, show that tag below and replace the name. -->
-      <div class="navbar-item" style="display: none">
-        <div>
-          <a href="{{ url_for('home.personal_homepage') }}">
-            <div class="tag is-primary is-light is-medium is-hoverable">
-              Hello, Peter Geo
-            </div>
-          </a>
-        </div>
-      </div>
+      {% endif %}
     </div>
   </div>
 </nav>
