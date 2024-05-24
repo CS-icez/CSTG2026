@@ -1,5 +1,5 @@
 from flask import (
-    Blueprint, render_template, # request, redirect, url_for
+    Blueprint, render_template, g, redirect, url_for
 )
 
 # from CSTG2026.db import get_db
@@ -19,3 +19,8 @@ def section():
 def post():
     return render_template('forum/post.html')
 
+@bp.before_request
+def signin_required():
+    if g.usr is None:
+        return redirect(url_for('home.index'))
+    

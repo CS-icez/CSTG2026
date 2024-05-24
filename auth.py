@@ -45,7 +45,7 @@ def signup():
                 error = 'This email is already registered.'
 
         if error is not None:
-            flash(error)
+            flash(error, 'error')
             return render_template('auth/signup.html')
         
         print(generate_password_hash(passwd))
@@ -55,6 +55,7 @@ def signup():
             (name, gender, email, generate_password_hash(passwd), profile, type)
         )
         db.commit()
+        flash('You have successfully signed up.', 'info')
         return redirect(url_for('home.index'))
 
 
@@ -81,11 +82,12 @@ def signin():
                 error = 'Incorrect password.'
 
         if error is not None:
-            flash(error)
+            flash(error, 'error')
             return redirect(url_for('home.index'))
 
         session.clear()
         session['usr_id'] = usr[0]
+        flash('You have successfully signed in.', 'info')
         return redirect(url_for('home.index'))
 
 @bp.before_app_request
@@ -110,6 +112,7 @@ def signin_required(view):
     @functools.wraps(view)
     def wrapped_view(**kwargs):
         if g.usr is None:
+            flash('Sign in required.', 'error')
             return redirect(url_for('home.index'))
         return view(**kwargs)
     return wrapped_view

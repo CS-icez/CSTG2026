@@ -1,8 +1,9 @@
 from flask import (
-    Blueprint, render_template, request, redirect, url_for, g, flash
+    Blueprint, render_template, request, redirect, url_for, flash
 )
 
 from CSTG2026.db import get_db
+from CSTG2026.auth import signin_required
 from random import randint
 
 bp = Blueprint('home', __name__, url_prefix='/home')
@@ -10,7 +11,6 @@ bp = Blueprint('home', __name__, url_prefix='/home')
 @bp.route('/')
 @bp.route('/index')
 def index():
-    print(g.usr)
     return render_template('home/index.html')
 
 @bp.route('/call_for_papers')
@@ -26,6 +26,7 @@ def cstg_conferences():
     return render_template('home/cstg_conferences.html')
 
 @bp.route('/submit', methods=('GET', 'POST'))
+@signin_required
 def submit():
     from . import store_file
     if request.method == 'GET':
@@ -53,7 +54,7 @@ def submit():
             error = 'Authors are required.'
 
         if error is not None:
-            flash(error)
+            flash(error, 'error')
             return render_template('home/submit.html')
         
         ids = []
@@ -65,7 +66,7 @@ def submit():
             item = cursor.fetchone()
             if item is None:
                 error = 'Author not found: ' + author
-                flash(error)
+                flash(error, 'error')
                 return render_template('home/submit.html')
             ids.append(item[0])
 
@@ -95,6 +96,7 @@ def submit():
             db.rollback()
             print(e)
 
+        flash('You have successfully submitted the paper.', 'info')
         return redirect(url_for('home.index'))
     
 @bp.route('/personal_homepage')

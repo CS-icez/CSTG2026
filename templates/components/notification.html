@@ -1,0 +1,18 @@
+{% with msgs = get_flashed_messages(with_categories=True) %}
+  {% if msgs %}
+<div class="modal is-active is-size-5">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    {% if msgs[0][0] == 'info' %}
+    <div class="notification is-light is-info"
+      style="height: 200px; display: flex; align-items: center; justify-content: center;">
+    {%else %}
+    <div class="notification is-light is-danger"
+      style="height: 200px; display: flex; align-items: center; justify-content: center;">
+    {% endif %}
+      {{ msgs[0][1] }}
+    </div>
+  </div>
+</div>
+  {% endif %}
+{% endwith %}
