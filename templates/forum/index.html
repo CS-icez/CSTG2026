@@ -11,7 +11,7 @@ CSTG '26 Forum
 {% block script %}
 <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
 <script src="https://kit.fontawesome.com/0a1fc3c71c.js"
-        crossorigin="anonymous"></script>
+  crossorigin="anonymous"></script>
 <script src="{{ url_for('static', filename='js/signin.js') }}"></script>
 {% endblock %}
 
@@ -20,99 +20,126 @@ CSTG '26 Forum
 {% include 'components/navbar.html' %}
 
 <div class="block container-display" style="margin: 50px 0">
-    <div class="title is-2">
-        CSTG '26 Official Forum
-    </div>
+  <div class="title is-2">
+    CSTG '26 Official Forum
+  </div>
 </div>
 
-<div class="block"  style="margin: 0 100px">
-    <div class="title">
-        Our Sections:
+<div class="block" style="margin: 0 100px">
+  <div class="title">
+    Our Sections:
+  </div>
+  <div class="fixed-grid has-3-cols">
+    <div class="grid">
+      <div class="cell">
+        <a href="{{ url_for('forum.section') }}">
+          <div class="card is-primary is-scalable"
+            style="box-shadow: 0 2px 8px 0 #06D6A0">
+            <div class="card-content container-display">
+              <div class="icon"
+                style="text-align: center; font-size: 3rem; margin-top: 20px">
+                <i class="fa-solid fa-computer"></i>
+              </div>
+              <div class="content"
+                style="margin-top: 30px; text-align: center">
+                <p class="title is-4">General</p>
+                <p class="subtitle is-6"
+                  style="margin-top: 5px">Discuss and talk
+                  about anything interesting.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="cell">
+        <a href="{{ url_for('forum.section') }}">
+          <div class="card is-primary is-scalable"
+            style="box-shadow: 0 2px 8px 0 #EF476F">
+            <div class="card-content container-display">
+              <div class="icon"
+                style="text-align: center; font-size: 3rem; margin-top: 20px">
+                <i class="fa-solid fa-lightbulb"></i>
+              </div>
+              <div class="content"
+                style="margin-top: 30px; text-align: center">
+                <p class="title is-4">AI</p>
+                <p class="subtitle is-6"
+                  style="margin-top: 5px">Share your thoughts
+                  on AI and machine learning.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="cell">
+        <a href="{{ url_for('forum.section') }}">
+          <div class="card is-primary is-scalable"
+            style="box-shadow: 0 2px 8px 0 #1B9AAA">
+            <div class="card-content container-display">
+              <div class="icon"
+                style="text-align: center; font-size: 3rem; margin-top: 20px">
+                <i class="fa-solid fa-globe"></i>
+              </div>
+              <div class="content"
+                style="margin-top: 30px; text-align: center">
+                <p class="title is-4">Networks</p>
+                <p class="subtitle is-6"
+                  style="margin-top: 5px">Talk about new
+                  technologies in computer networks.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="cell">
+        <a href="{{ url_for('forum.section') }}">
+          <div class="card is-primary is-scalable"
+            style="box-shadow: 0 2px 8px 0 blueviolet">
+            <div class="card-content container-display">
+              <div class="icon"
+                style="text-align: center; font-size: 3rem; margin-top: 20px">
+                <i class="fa-solid fa-microchip"></i>
+              </div>
+              <div class="content"
+                style="margin-top: 30px; text-align: center">
+                <p class="title is-4">Architecture</p>
+                <p class="subtitle is-6"
+                  style="margin-top: 5px">Explore the latest
+                  in computer architecture.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="cell">
+        <a href="{{ url_for('forum.section') }}">
+          <div class="card is-primary is-scalable"
+            style="box-shadow: 0 2px 8px 0 #FFC233">
+            <div class="card-content container-display">
+              <div class="icon"
+                style="text-align: center; font-size: 3rem; margin-top: 20px">
+                <i class="fa-solid fa-key"></i>
+              </div>
+              <div class="content"
+                style="margin-top: 30px; text-align: center">
+                <p class="title is-4">Cryptography</p>
+                <p class="subtitle is-6"
+                  style="margin-top: 5px">Discuss the latest
+                  advancements in cryptography.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
     </div>
-    <div class="fixed-grid has-3-cols">
-        <div class="grid">
-            <div class="cell">
-                <a href="{{ url_for('forum.section') }}">
-                    <div class="card is-primary is-scalable" style="box-shadow: 0 2px 8px 0 #06D6A0">
-                        <div class="card-content container-display">
-                            <div class="icon" style="text-align: center; font-size: 3rem; margin-top: 20px">
-                                <i class="fa-solid fa-computer"></i>
-                            </div>
-                            <div class="content" style="margin-top: 30px; text-align: center">
-                                <p class="title is-4">General</p>
-                                <p class="subtitle is-6" style="margin-top: 5px">Discuss and talk about anything interesting.</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="cell">
-                <a href="{{ url_for('forum.section') }}">
-                    <div class="card is-primary is-scalable" style="box-shadow: 0 2px 8px 0 #EF476F">
-                        <div class="card-content container-display">
-                            <div class="icon" style="text-align: center; font-size: 3rem; margin-top: 20px">
-                                <i class="fa-solid fa-lightbulb"></i>
-                            </div>
-                            <div class="content" style="margin-top: 30px; text-align: center">
-                                <p class="title is-4">AI</p>
-                                <p class="subtitle is-6" style="margin-top: 5px">Share your thoughts on AI and machine learning.</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="cell">
-                <a href="{{ url_for('forum.section') }}">
-                    <div class="card is-primary is-scalable" style="box-shadow: 0 2px 8px 0 #1B9AAA">
-                        <div class="card-content container-display">
-                            <div class="icon" style="text-align: center; font-size: 3rem; margin-top: 20px">
-                                <i class="fa-solid fa-globe"></i>
-                            </div>
-                            <div class="content" style="margin-top: 30px; text-align: center">
-                                <p class="title is-4">Networks</p>
-                                <p class="subtitle is-6" style="margin-top: 5px">Talk about new technologies in computer networks.</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="cell">
-                <a href="{{ url_for('forum.section') }}">
-                    <div class="card is-primary is-scalable" style="box-shadow: 0 2px 8px 0 blueviolet">
-                        <div class="card-content container-display">
-                            <div class="icon" style="text-align: center; font-size: 3rem; margin-top: 20px">
-                                <i class="fa-solid fa-microchip"></i>
-                            </div>
-                            <div class="content" style="margin-top: 30px; text-align: center">
-                                <p class="title is-4">Architecture</p>
-                                <p class="subtitle is-6" style="margin-top: 5px">Explore the latest in computer architecture.</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="cell">
-                <a href="{{ url_for('forum.section') }}">
-                    <div class="card is-primary is-scalable" style="box-shadow: 0 2px 8px 0 #FFC233">
-                        <div class="card-content container-display">
-                            <div class="icon" style="text-align: center; font-size: 3rem; margin-top: 20px">
-                                <i class="fa-solid fa-key"></i>
-                            </div>
-                            <div class="content" style="margin-top: 30px; text-align: center">
-                                <p class="title is-4">Cryptography</p>
-                                <p class="subtitle is-6" style="margin-top: 5px">Discuss the latest advancements in cryptography.</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="content" style="margin: 50px 20px">
-        <p>
-            CSTG '26 provides the forum with a variety of sections for you to discuss and share your thoughts on different topics. Feel free to explore and join the conversation!
-        </p>
-    </div>
+  </div>
+  <div class="content" style="margin: 50px 20px">
+    <p>
+      CSTG '26 provides the forum with a variety of sections for you to
+      discuss and share your thoughts on different topics. Feel free to
+      explore and join the conversation!
+    </p>
+  </div>
 </div>
 
 {% include 'components/footer.html' %}
