@@ -20,3 +20,4 @@
 - modal 的背景更透明一点.
 - navbar 右侧放上头像和全名.
 - 生成 forum 的数据, section 和 post 模板化.
+- reply modal 的布局有点别扭?
