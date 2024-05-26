@@ -58,13 +58,18 @@ def section(sec_name):
         return redirect(url_for('forum.section', sec_name=sec_name))
     
     with db.cursor() as cursor:
-        cursor.execute(
-            'INSERT INTO post (title, content, sec_id, pub_id) VALUES (%s, %s, %s, %s)',
-            (title, content, sec_id, pub_id)
-        )
-        db.commit()
-        flash('Post published.', 'info')
-        return redirect(url_for('forum.section', sec_name=sec_name))
+        try:
+            cursor.execute(
+                'INSERT INTO post (title, content, sec_id, pub_id) VALUES (%s, %s, %s, %s)',
+                (title, content, sec_id, pub_id)
+            )
+            db.commit()
+            flash('Post published.', 'info')
+            return redirect(url_for('forum.section', sec_name=sec_name))
+        except Exception as e:
+            print(e)
+            flash('Unknown error.', 'error')
+            return redirect(url_for('forum.section', sec_name=sec_name))
 
 @bp.route('/section/<sec_name>/post/<post_id>', methods=('GET', 'POST'))
 def post(sec_name, post_id):

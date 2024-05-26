@@ -57,13 +57,18 @@ def signup():
         
         avatar_filename = store_file(avatar)
 
-        cursor.execute(
-            'INSERT INTO usr (name, gender, email, passwd, profile, type, avatar_filename) VALUES (%s, %s, %s, %s, %s, %s, %s)',
-            (name, gender, email, generate_password_hash(passwd), profile, type, avatar_filename)
-        )
-        db.commit()
-        flash('You have successfully signed up.', 'info')
-        return redirect(url_for('home.index'))
+        try:
+            cursor.execute(
+                'INSERT INTO usr (name, gender, email, passwd, profile, type, avatar_filename) VALUES (%s, %s, %s, %s, %s, %s, %s)',
+                (name, gender, email, generate_password_hash(passwd), profile, type, avatar_filename)
+            )
+            db.commit()
+            flash('You have successfully signed up.', 'info')
+            return redirect(url_for('home.index'))
+        except Exception as e:
+            print(e)
+            flash('Unknown error.', 'error')
+            return render_template('auth/signup.html')
 
 
 @bp.route('/signin', methods=('POST',))

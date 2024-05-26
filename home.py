@@ -83,21 +83,26 @@ def submit():
             flash('No reviewer available.', 'error')
             return redirect(url_for('home.index'))
 
-        idx = randint(0, len(reviewers) - 1)
-        cursor.execute(
-            'INSERT INTO paper (title, abstract, filename, reviewer_id) VALUES (%s, %s, %s, %s)',
-            (title, abstract, filename, reviewers[idx][0])
-        )
-        paper_id = cursor.lastrowid
-        for id in ids:
+        try:
+            idx = randint(0, len(reviewers) - 1)
             cursor.execute(
-                'INSERT INTO publishes (usr_id, paper_id) VALUES (%s, %s)',
-                (id, paper_id)
+                'INSERT INTO paper (title, abstract, filename, reviewer_id) VALUES (%s, %s, %s, %s)',
+                (title, abstract, filename, reviewers[idx][0])
             )
-        db.commit()
-        flash('You have successfully submitted the paper.', 'info')
-        return redirect(url_for('home.index'))
-
+            paper_id = cursor.lastrowid
+            for id in ids:
+                cursor.execute(
+                    'INSERT INTO publishes (usr_id, paper_id) VALUES (%s, %s)',
+                    (id, paper_id)
+                )
+            db.commit()
+            flash('You have successfully submitted the paper.', 'info')
+            return redirect(url_for('home.index'))
+        except Exception as e:
+            print(e)
+            flash('Unknown error.', 'error')
+            return render_template('home/submit.html')
+        
 @bp.route('/personal_homepage')
 @signin_required
 def personal_homepage():
