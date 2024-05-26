@@ -2,7 +2,7 @@
   <div class="navbar-brand">
     <div class="navbar-item">
       <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo"
-        style="scale: 1.25;" class="mb-1">
+        style="scale: 1.25;" class="mb-1 ml-1">
     </div>
     <a role="button" class="navbar-burger" aria-label="menu"
       aria-expanded="false" data-target="navbarMenu">
@@ -107,7 +107,7 @@
       <!-- If user has signed in, show that tag below and replace the name. -->
       <div class="navbar-item">
         <a href="{{ url_for('home.personal_homepage') }}" id="avatar"><img
-            src="{{ url_for('static', filename='images/peter.jpg') }}"
+            src="{{ url_for('uploads', filename=g.usr[7]) }}"
             alt="Logo"
             style="scale: 1.4; border-radius: 50%;"
             class="mr-3 mt-1"></a>

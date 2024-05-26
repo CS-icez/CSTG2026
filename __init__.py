@@ -1,5 +1,5 @@
 from flask import Flask
-from flask_uploads import UploadSet, configure_uploads, DEFAULTS
+from flask_uploads import UploadSet, configure_uploads, DEFAULTS, send_from_directory
 import os
 
 app = Flask(__name__, instance_relative_config=True)
@@ -9,6 +9,11 @@ app.config['UPLOADED_FILES_DEST'] = 'uploads'
 os.makedirs('uploads', exist_ok=True)
 files = UploadSet('files', DEFAULTS + ('pdf',))
 configure_uploads(app, files)
+
+@app.route('/uploads/<filename>')
+def uploads(filename):
+    print('hello')
+    return send_from_directory(app.config['UPLOADED_FILES_DEST'], filename)
 
 from . import db
 db.init_app(app)

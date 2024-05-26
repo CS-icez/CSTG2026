@@ -10,7 +10,7 @@ CREATE TABLE usr (
     passwd VARCHAR(200) NOT NULL,
     type ENUM('A', 'R'),
     profile TEXT NOT NULL,
-    image_name VARCHAR(50) NOT NULL
+    avatar_filename VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE paper (

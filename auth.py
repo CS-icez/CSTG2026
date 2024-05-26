@@ -13,8 +13,12 @@ bp = Blueprint('auth', __name__, url_prefix='/auth')
 
 @bp.route('/signup', methods=('GET', 'POST'))
 def signup():
+    from . import store_file
+
     if request.method == 'GET':
         return render_template('auth/signup.html')
+    
+    print(request.form)
 
     name = request.form['name']
     gender = request.form['gender']
@@ -22,6 +26,7 @@ def signup():
     passwd = request.form['passwd']
     profile = request.form['profile']
     type = request.form['role']
+    avatar = request.files['avatar']
     db = get_db()
     error = None
 
@@ -38,6 +43,8 @@ def signup():
             error = 'Profile is required.'
         elif not type:
             error = 'Type is required.'
+        elif not avatar:
+            error = 'Avatar is required.'
 
         if error is None:
             cursor.execute('SELECT usr_id FROM usr WHERE email = %s', (email,))
@@ -48,11 +55,11 @@ def signup():
             flash(error, 'error')
             return render_template('auth/signup.html')
         
-        print(generate_password_hash(passwd))
+        avatar_filename = store_file(avatar)
 
         cursor.execute(
-            'INSERT INTO usr (name, gender, email, passwd, profile, type) VALUES (%s, %s, %s, %s, %s, %s)',
-            (name, gender, email, generate_password_hash(passwd), profile, type)
+            'INSERT INTO usr (name, gender, email, passwd, profile, type, avatar_filename) VALUES (%s, %s, %s, %s, %s, %s, %s)',
+            (name, gender, email, generate_password_hash(passwd), profile, type, avatar_filename)
         )
         db.commit()
         flash('You have successfully signed up.', 'info')

@@ -5,13 +5,21 @@ from flask.cli import with_appcontext
 
 def get_db():
     if 'db' not in g:
-        g.db = pymysql.connect(
-            host='localhost',
-            user='root',
-            password='mysql231128',
-            port=3306,
-            db='cstg'
-        )
+        try:
+            g.db = pymysql.connect(
+                host='localhost',
+                user='root',
+                password='mysql231128',
+                port=3306,
+                db='cstg'
+            )
+        except pymysql.err.OperationalError:
+            g.db = pymysql.connect(
+                host='localhost',
+                user='root',
+                password='mysql231128',
+                port=3306
+            )
     return g.db
 
 def close_db(e=None):
@@ -45,6 +53,7 @@ def execute_sql_list(sql_list):
         db.commit()
     except Exception as e:
         db.rollback()
+        print('Error: execute_sql_list')
         print(e)
     cursor.close()
 
@@ -52,13 +61,20 @@ def execute_sql_file(filename):
     sql_list = parse_sql_file(filename)
     execute_sql_list(sql_list)
 
-def init_db():
-    execute_sql_file('sql/schema.sql')
-    with current_app.open_resource('sql/trigger.sql') as f:
+def execute_sql_file_single(filename):
+    with current_app.open_resource(filename) as f:
         sql = f.read().decode('utf8')
         execute_sql_list([sql])
-    # execute_sql_file('sql/trigger.sql')
-    execute_sql_file('sql/section.sql')
+
+def init_db():
+    execute_sql_file('sql/schema.sql')
+    execute_sql_file_single('sql/trigger.sql')
+    execute_sql_file('sql/usr.sql')
+    execute_sql_file_single('sql/paper.sql')
+    execute_sql_file_single('sql/publishes.sql')
+    execute_sql_file_single('sql/section.sql')
+    execute_sql_file_single('sql/post.sql')
+    execute_sql_file_single('sql/reply.sql')
 
 @click.command('init-db')
 @with_appcontext

@@ -34,7 +34,7 @@ CSTG '26 Forum
     <div class="media">
       <div class="media-left">
         <figure class="image is-64x64">
-          <img src="{{ url_for('static', filename='images/peter.jpg') }}" />
+          <img src="{{ url_for('uploads', filename=post[7]) }}" />
         </figure>
       </div>
       <div class="media-content">
@@ -57,7 +57,7 @@ CSTG '26 Forum
     <article class="media">
       <figure class="media-left">
         <p class="image is-64x64">
-          <img src="{{ url_for('static', filename='images/wode.jpg') }}"
+          <img src="{{ url_for('uploads', filename=reply[5]) }}"
             style="width: 64px; height: 64px" />
         </p>
       </figure>
@@ -99,7 +99,7 @@ CSTG '26 Forum
       <article class="media">
         <div class="media-left">
           <figure class="image is-64x64">
-            <img src="{{ url_for('static', filename='images/peter.jpg') }}" />
+            <img src="{{ url_for('uploads', filename=g.usr[7]) }}" />
           </figure>
         </div>
         <div class="media-content">

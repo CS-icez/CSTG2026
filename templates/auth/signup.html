@@ -62,7 +62,8 @@ Join CSTG '26
 </div>
 
 <form class="container" style="padding: 0 150px"
-    action="{{ url_for('auth.signup') }}" method="post">
+    action="{{ url_for('auth.signup') }}" method="post"
+    enctype="multipart/form-data">
     <div class="field">
         <label class="label" style="font-size: 1.5rem">Full Name</label>
         <div class="control has-icons-left">
@@ -127,8 +128,8 @@ Join CSTG '26
         <div class="control">
             <div class="file">
                 <label class="file-label">
-                    <input class="file-input" type="file" id="submitContent"
-                           name="file" required />
+                    <input class="file-input" type="file" id="signUpAvatar"
+                           name="avatar" required />
                     <span class="file-cta">
                         <span class="file-icon">
                             <i class="fas fa-user-astronaut"></i>
