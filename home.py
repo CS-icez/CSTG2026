@@ -1,5 +1,5 @@
 from flask import (
-    Blueprint, render_template, request, redirect, url_for, flash
+    Blueprint, render_template, request, redirect, url_for, flash, g
 )
 
 from CSTG2026.db import get_db
@@ -99,5 +99,31 @@ def submit():
         return redirect(url_for('home.index'))
 
 @bp.route('/personal_homepage')
+@signin_required
 def personal_homepage():
-    return render_template('home/personal_homepage.html')
+    usr_id = g.usr[0]
+    db = get_db()
+    submissions = []
+    reviews = []
+
+    with db.cursor() as cursor:
+        cursor.execute(
+            'SELECT paper_id FROM publishes WHERE usr_id = %s',
+            (usr_id,)
+        )
+        paper_ids = cursor.fetchall()
+        for paper_id in paper_ids:
+            cursor.execute(
+                'SELECT * FROM paper WHERE paper_id = %s',
+                (paper_id[0],)
+            )
+            submissions.append(cursor.fetchone())
+
+        cursor.execute(
+            'SELECT * FROM paper WHERE reviewer_id = %s',
+            (usr_id,)
+        )
+        reviews = cursor.fetchall()
+
+    return render_template('home/personal_homepage.html',
+        submissions=submissions, reviews=reviews)
