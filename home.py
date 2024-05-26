@@ -132,3 +132,34 @@ def personal_homepage():
 
     return render_template('home/personal_homepage.html',
         submissions=submissions, reviews=reviews)
+
+@bp.route('/review/<paper_id>', methods=('POST',))
+@signin_required
+def review(paper_id):
+    result = request.form['result']
+    comment = request.form['comment']
+    db = get_db()
+    error = None
+
+    if not result:
+        error = 'Result is required.'
+    elif not comment:
+        error = 'Comment is required.'
+
+    if error is not None:
+        flash(error, 'error')
+        return redirect(url_for('home.personal_homepage'))
+
+    try:
+        with db.cursor() as cursor:
+            cursor.execute(
+                'UPDATE paper SET status = %s, comment = %s WHERE paper_id = %s',
+                (result, comment, paper_id)
+            )
+        db.commit()
+        flash('You have successfully reviewed the paper.', 'info')
+        return redirect(url_for('home.personal_homepage'))
+    except Exception as e:
+        print(e)
+        flash('Unknown error.', 'error')
+        return redirect(url_for('home.personal_homepage'))
