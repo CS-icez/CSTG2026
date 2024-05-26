@@ -5,6 +5,7 @@ $(window).on('load', function() {
     fixed.css({
         position: 'fixed',
         top: rect.top + 'px',
-        left: rect.left + 'px'
+        left: rect.left + 'px',
+        visibility: 'visible'
     });
 })
