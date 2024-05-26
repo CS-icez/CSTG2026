@@ -22,3 +22,4 @@
 - 生成 forum 的数据, section 和 post 模板化.
 - reply modal 的布局有点别扭?
 - 要么前后端都加字符串长度检查, 要么所有 insert into 都加 try-except.
+- 资源加载太慢, 作业要求用 CDN, 延迟加载?

@@ -101,6 +101,7 @@ def post(sec_name, post_id):
                 )
                 return cursor.fetchone()[0]
             
+            post = (post[0], post[1], post[2], post[3], get_name(post[4]), post[5], post[6])
             replies = [(r[0], r[1], r[2], get_name(r[3]), r[4]) for r in replies]
 
         return render_template('forum/post.html',
