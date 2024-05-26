@@ -2,16 +2,25 @@
   {% if msgs %}
 <div class="modal is-active is-size-5">
   <div class="modal-background"></div>
-  <div class="modal-content">
+  <div class="modal-content is-size-2">
     {% if msgs[0][0] == 'info' %}
-    <div class="notification is-light is-info"
-      style="height: 200px; display: flex; align-items: center; justify-content: center;">
+    <article class="message is-info">
+      <div class="message-header" style="font-size: 1.7rem; height: 60px">
+        <p>Success</p>
+        <button class="delete" aria-label="delete"></button>
+      </div>
+      <div class="message-body" style="height: 200px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem">
     {%else %}
-    <div class="notification is-light is-danger"
-      style="height: 200px; display: flex; align-items: center; justify-content: center;">
+    <article class="message is-danger">
+      <div class="message-header" style="font-size: 1.7rem; height: 60px">
+        <p>Error</p>
+        <button class="delete" aria-label="delete"></button>
+      </div>
+      <div class="message-body" style="height: 200px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem">
     {% endif %}
       {{ msgs[0][1] }}
-    </div>
+      </div>
+    </article>
   </div>
 </div>
   {% endif %}
