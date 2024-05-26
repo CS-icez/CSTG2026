@@ -71,34 +71,33 @@ def submit():
             ids.append(item[0])
 
         filename = store_file(file)
-        try:
-            placeholder = ', '.join(['%s'] * len(ids))
-            cursor.execute(
-                f"SELECT usr_id FROM usr WHERE type = 'R' and email NOT IN ({placeholder})",
-                ids
-            )
-            reviewers = cursor.fetchall()
-            assert len(reviewers) > 0
-            idx = randint(0, len(reviewers) - 1)
 
-            cursor.execute(
-                'INSERT INTO paper (title, abstract, filename, reviewer_id) VALUES (%s, %s, %s, %s)',
-                (title, abstract, filename, reviewers[idx][0])
-            )
-            paper_id = cursor.lastrowid
-            for id in ids:
-                cursor.execute(
-                    'INSERT INTO publishes (usr_id, paper_id) VALUES (%s, %s)',
-                    (id, paper_id)
-                )
-            db.commit()
-        except Exception as e:
-            db.rollback()
-            print(e)
+        placeholder = ', '.join(['%s'] * len(ids))
+        cursor.execute(
+            f"SELECT usr_id FROM usr WHERE type = 'R' and email NOT IN ({placeholder})",
+            ids
+        )
+        reviewers = cursor.fetchall()
+        
+        if len(reviewers) == 0:
+            flash('No reviewer available.', 'error')
+            return redirect(url_for('home.index'))
 
+        idx = randint(0, len(reviewers) - 1)
+        cursor.execute(
+            'INSERT INTO paper (title, abstract, filename, reviewer_id) VALUES (%s, %s, %s, %s)',
+            (title, abstract, filename, reviewers[idx][0])
+        )
+        paper_id = cursor.lastrowid
+        for id in ids:
+            cursor.execute(
+                'INSERT INTO publishes (usr_id, paper_id) VALUES (%s, %s)',
+                (id, paper_id)
+            )
+        db.commit()
         flash('You have successfully submitted the paper.', 'info')
         return redirect(url_for('home.index'))
-    
+
 @bp.route('/personal_homepage')
 def personal_homepage():
     return render_template('home/personal_homepage.html')

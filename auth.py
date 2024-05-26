@@ -78,7 +78,7 @@ def signin():
             )
             if (usr := cursor.fetchone()) is None:
                 error = 'This email is not registered.'
-            elif not usr[4] == passwd:
+            elif not (usr[4] == passwd or check_password_hash(usr[4], passwd)):
                 error = 'Incorrect password.'
 
         if error is not None:

@@ -1,8 +1,9 @@
 <nav class="navbar is-fixed-top" role="navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" href="{{ url_for('home.index') }}">
-      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
-    </a>
+    <div class="navbar-item">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo"
+        style="scale: 1.25;" class="mb-1">
+    </div>
     <a role="button" class="navbar-burger" aria-label="menu"
       aria-expanded="false" data-target="navbarMenu">
       <span aria-hidden="true"></span>
@@ -41,7 +42,8 @@
           <a class="navbar-item" href="{{ url_for('home.call_for_papers') }}">
             <strong>Call For Papers</strong>
           </a>
-          <a class="navbar-item" href="{{ url_for('home.call_for_papers') }}#importantDates">
+          <a class="navbar-item"
+            href="{{ url_for('home.call_for_papers') }}#importantDates">
             <strong>Important Dates</strong>
           </a>
           <a class="navbar-item" href="{{ url_for('home.submit') }}">
@@ -104,13 +106,11 @@
       {% if g.usr %}
       <!-- If user has signed in, show that tag below and replace the name. -->
       <div class="navbar-item">
-        <div>
-          <a href="{{ url_for('home.personal_homepage') }}">
-            <div class="tag is-primary is-light is-medium is-hoverable">
-              Hello, Peter Geo
-            </div>
-          </a>
-        </div>
+        <a href="{{ url_for('home.personal_homepage') }}" id="avatar"><img
+            src="{{ url_for('static', filename='images/peter.jpg') }}"
+            alt="Logo"
+            style="scale: 1.4; border-radius: 50%;"
+            class="mr-3 mt-1"></a>
         <a class="button is-primary ml-2" href="{{ url_for('auth.signout') }}">
           <strong>Sign out</strong>
         </a>

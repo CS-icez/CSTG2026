@@ -106,3 +106,7 @@ a:hover {
 .cell {
     margin: 10px 10px;
 }
+
+#avatar:hover {
+    box-shadow: none;
+}

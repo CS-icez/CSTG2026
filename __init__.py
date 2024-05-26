@@ -1,10 +1,12 @@
 from flask import Flask
 from flask_uploads import UploadSet, configure_uploads, DEFAULTS
+import os
 
 app = Flask(__name__, instance_relative_config=True)
 app.config.from_mapping(SECRET_KEY='dev')
 
 app.config['UPLOADED_FILES_DEST'] = 'uploads'
+os.makedirs('uploads', exist_ok=True)
 files = UploadSet('files', DEFAULTS + ('pdf',))
 configure_uploads(app, files)
 
