@@ -86,7 +86,7 @@ def submit():
         try:
             idx = randint(0, len(reviewers) - 1)
             cursor.execute(
-                'INSERT INTO paper (title, abstract, filename, reviewer_id) VALUES (%s, %s, %s, %s)',
+                "INSERT INTO paper (title, abstract, filename, reviewer_id, comment) VALUES (%s, %s, %s, %s, 'NULL')",
                 (title, abstract, filename, reviewers[idx][0])
             )
             paper_id = cursor.lastrowid

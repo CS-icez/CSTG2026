@@ -20,7 +20,7 @@ CREATE TABLE paper (
     filename VARCHAR(50) NOT NULL,
     reviewer_id INT NOT NULL,
     status ENUM('P', 'A', 'R') NOT NULL DEFAULT 'P',
-    comment TEXT NOT NULL DEFAULT 'Null.',
+    comment TEXT,
     FOREIGN KEY (reviewer_id) REFERENCES usr(usr_id)
 );
 
