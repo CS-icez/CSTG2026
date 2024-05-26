@@ -51,7 +51,7 @@ CSTG '26 Forum - General
             <div class="content">
               <strong style="color: #0090ff">{{ post[1] }}</strong>
               <br />
-              <span
+              <span class="post-content"
                 style="display: inline-block; width: 400px; height: 45px; overflow: hidden; text-overflow: ellipsis;">
                 {{ post[2] }}
               </span>
@@ -94,7 +94,7 @@ CSTG '26 Forum - General
             <div class="field">
               <label class="label" style="font-size: 1.5rem">Title</label>
               <div class="control">
-                <input class="input" type="text" name="title" required>
+                <input class="input" type="text" name="title" maxlength="500" required>
               </div>
             </div>
             <div class="field">

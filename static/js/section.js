@@ -9,3 +9,20 @@ $(window).on('load', function() {
         visibility: 'visible'
     });
 })
+
+$(function () {
+    document.querySelectorAll('.post-content').forEach((element) => {
+        truncateText(element, 2);
+    });
+})
+
+function truncateText(element, lineCount) {
+    const lineHeight = parseFloat(getComputedStyle(element).lineHeight);
+    const maxHeight = lineHeight * lineCount;
+
+    let text = element.innerText;
+    while (element.scrollHeight > maxHeight) {
+        text = text.slice(0, -1);
+        element.innerText = text + '...';
+    }
+}

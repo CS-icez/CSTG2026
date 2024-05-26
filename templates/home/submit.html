@@ -50,7 +50,7 @@ Submit Your Paper
     <div class="field">
         <label class="label" style="font-size: 1.5rem">Title</label>
         <div class="control">
-            <input class="input" type="text" id="submitTitle" name="title"
+            <input class="input" type="text" id="submitTitle" name="title" maxlength="500"
                 required>
         </div>
     </div>
@@ -228,7 +228,7 @@ Submit Your Paper
         </div>
         <div class="control">
             <a href="{{ url_for('home.index') }}"><button
-                    class="button is-light">Cancel</button></a>
+                    class="button is-light" type="button">Cancel</button></a>
         </div>
     </div>
 </form>

@@ -67,7 +67,7 @@ Join CSTG '26
         <label class="label" style="font-size: 1.5rem">Full Name</label>
         <div class="control has-icons-left">
             <input class="input" type="text" id="signupName" name="name"
-                placeholder="Peter Irving" required>
+                placeholder="Peter Irving" maxlength="50" required>
             <span class="icon is-small is-left">
                 <i class="fas fa-user"></i>
             </span>
@@ -90,7 +90,7 @@ Join CSTG '26
         <label class="label" style="font-size: 1.5rem">Email</label>
         <div class="control has-icons-left">
             <input class="input" type="email" id="signupEmail" name="email"
-                placeholder="kai@example.com" required>
+                placeholder="kai@example.com" maxlength="50" required>
             <span class="icon is-small is-left">
                 <i class="fas fa-envelope"></i>
             </span>
@@ -101,7 +101,7 @@ Join CSTG '26
         <label class="label" style="font-size: 1.5rem">Password</label>
         <div class="control has-icons-left">
             <input class="input" type="password" id="signupPassword"
-                name="passwd" placeholder="********" required>
+                name="passwd" placeholder="********" maxlength="200" required>
             <span class="icon is-small is-left">
                 <i class="fas fa-key"></i>
             </span>
@@ -118,6 +118,24 @@ Join CSTG '26
                     <option value="A">Author</option>
                     <option value="R">Reviewer</option>
                 </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label" style="font-size: 1.5rem">Avatar</label>
+        <div class="control">
+            <div class="file">
+                <label class="file-label">
+                    <input class="file-input" type="file" id="submitContent"
+                           name="file" required />
+                    <span class="file-cta">
+                        <span class="file-icon">
+                            <i class="fas fa-user-astronaut"></i>
+                        </span>
+                        <span class="file-label"> Choose a image… </span>
+                    </span>
+                </label>
             </div>
         </div>
     </div>
@@ -149,7 +167,7 @@ Join CSTG '26
         </div>
         <div class="control">
             <a href="{{ url_for('home.index') }}"><button
-                    class="button is-light">Cancel</button></a>
+                    class="button is-light" type="button">Cancel</button></a>
         </div>
     </div>
 </form>

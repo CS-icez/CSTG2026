@@ -27,7 +27,7 @@ function initModal() {
         });
     });
 
-    (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot') || []).forEach(($close) => {
+    (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot, .button, .delete') || []).forEach(($close) => {
         const $target = $close.closest('.modal');
 
         $close.addEventListener('click', () => {
