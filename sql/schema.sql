@@ -7,6 +7,7 @@ CREATE TABLE usr (
     name VARCHAR(50) NOT NULL,
     gender ENUM('M', 'F') NOT NULL,
     email VARCHAR(50) NOT NULL,
+    image_name VARCHAR(50) NOT NULL,
     passwd VARCHAR(200) NOT NULL,
     type ENUM('A', 'R'),
     profile TEXT NOT NULL
