@@ -126,12 +126,23 @@ Personal Homepage
                         View Details
                     </a>
                     <div class="field" style="margin-top: 20px">
+                    <label class="label" style="font-size: 1.3rem">Review Result</label>
+                    <div class="control">
+                        <div class="select">
+                            <select id="result" name="result">
+                                <option value="A">Accept</option>
+                                <option value="R">Reject</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                    <div class="field">
                         <label class="label" style="font-size: 1.3rem">Comment</label>
                         <div class="control">
                             <textarea class="textarea"></textarea>
                         </div>
                     </div>
-                    <button class="button is-primary"><strong>Commit</strong></button>
+                    <button class="button is-primary" style="margin-top: 10px;"><strong>Commit</strong></button>
                 </div>
                 {% endfor %}
             </div>
