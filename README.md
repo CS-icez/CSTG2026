@@ -1,10 +1,10 @@
 # CSTG 2026
 
-待解决的问题:
+## Usage
 
-- 字体"跳变", 字体文件下载到本地.
-- 首页 venue 下的 level 未居中.
-- 登录/注册后转回之前页面, 而不是统一转回 /home/index.
-- 登录页去掉空 footer.
-- 测试移动端适配, 不能简单地以 px 指定高度和宽度.
-- section 页的 table 太丑了.
+### Option1: Local
+
+1. Make sure that you have [Flask](https://flask.github.net.cn), [MySQL](https://www.mysql.com) locally. We are running this project under the environment of Flask 2.3.3 and MySQL 8.2.0. We do not guarantee that this project will run normally under other versions.
+2. Replace the password in `db.py` and file path in `init_server.sh` and `start_server.sh` with your own.
+3. Run `./init_server.sh` in the parent directory of this project to initialize the database.
+4. Run `./start_server.sh` in the parent directory of this project to start the server.
