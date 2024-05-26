@@ -8,7 +8,7 @@ def get_db():
         g.db = pymysql.connect(
             host='localhost',
             user='root',
-            password='mysql231128',
+            password='pku170730',
             port=3306,
             db='cstg'
         )
