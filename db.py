@@ -51,6 +51,7 @@ def execute_sql_file(filename):
 
 def init_db():
     execute_sql_file('sql/schema.sql')
+    execute_sql_file('sql/section.sql')
 
 @click.command('init-db')
 @with_appcontext

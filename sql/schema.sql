@@ -43,6 +43,7 @@ CREATE TABLE post (
     sec_id INT NOT NULL,
     pub_id INT NOT NULL,
     pub_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    reply_cnt INT NOT NULL DEFAULT 0,
     FOREIGN KEY (sec_id) REFERENCES section(sec_id),
     FOREIGN KEY (pub_id) REFERENCES usr(usr_id)
 );

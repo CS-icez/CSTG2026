@@ -25,214 +25,47 @@ CSTG '26 Forum - General
     <div class="is-flex is-justify-content-center">
       <div class="is-flex">
         <div class="title is-2 mr-3">
+          {% if sec_name == 'General' %}
           <i class="fas fa-computer"></i>
+          {% elif sec_name == 'AI' %}
+          <i class="fas fa-lightbulb"></i>
+          {% elif sec_name == 'Networks' %}
+          <i class="fas fa-globe"></i>
+          {% elif sec_name == 'Architecture' %}
+          <i class="fas fa-microchip"></i>
+          {% elif sec_name == 'Cryptography' %}
+          <i class="fas fa-key"></i>
+          {% endif %}
         </div>
-        <div class="title is-2 mr-6">General Section</div>
+        <div class="title is-2 mr-6">{{ sec_name }} Section</div>
       </div>
     </div>
+    {% for post in posts %}
     <div class="box">
       <div class="media">
         <div class="media-left">
-          <i class="fas fa-comment mr-1"></i>10
+          <i class="fas fa-comment mr-1"></i>{{ post[6] }}
         </div>
         <div class="media-content">
           <a href="{{ url_for('forum.post') }}">
             <div class="content">
-              <strong style="color: #0090ff">How to get rid of the snake in my
-                backyard?</strong>
+              <strong style="color: #0090ff">{{ post[1] }}</strong>
               <br />
               <span
                 style="display: inline-block; width: 400px; height: 45px; overflow: hidden; text-overflow: ellipsis;">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-                ornare
-                magna eros, eu pellentesque tortor vestibulum ut. Maecenas non
-                massa
-                sem. Etiam finibus odio quis feugiat facilisis.
+                {{ post[2] }}
               </span>
               <br />
-              <small class="has-text-grey">2024-05-25 11:09</small>
+              <small class="has-text-grey">{{ post[5] }}</small>
             </div>
           </a>
         </div>
         <div class="media-right has-text-grey-dark">
-          <p>Peter Irving</p>
+          <p>{{ post[4] }}</p>
         </div>
       </div>
     </div>
-    <div class="box">
-      <div class="media">
-        <div class="media-left">
-          <i class="fas fa-comment mr-1"></i>10
-        </div>
-        <div class="media-content">
-          <a href="{{ url_for('forum.post') }}">
-            <div class="content">
-              <strong style="color: #0090ff">How to get rid of the snake in my
-                backyard?</strong>
-              <br />
-              <span
-                style="display: inline-block; width: 400px; height: 45px; overflow: hidden; text-overflow: ellipsis;">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-                ornare
-                magna eros, eu pellentesque tortor vestibulum ut. Maecenas non
-                massa
-                sem. Etiam finibus odio quis feugiat facilisis.
-              </span>
-              <br />
-              <small class="has-text-grey">2024-05-25 11:09</small>
-            </div>
-          </a>
-        </div>
-        <div class="media-right has-text-grey-dark">
-          <p>Peter Irving</p>
-        </div>
-      </div>
-    </div>
-    <div class="box">
-      <div class="media">
-        <div class="media-left">
-          <i class="fas fa-comment mr-1"></i>10
-        </div>
-        <div class="media-content">
-          <a href="{{ url_for('forum.post') }}">
-            <div class="content">
-              <strong style="color: #0090ff">How to get rid of the snake in my
-                backyard?</strong>
-              <br />
-              <span
-                style="display: inline-block; width: 400px; height: 45px; overflow: hidden; text-overflow: ellipsis;">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-                ornare
-                magna eros, eu pellentesque tortor vestibulum ut. Maecenas non
-                massa
-                sem. Etiam finibus odio quis feugiat facilisis.
-              </span>
-              <br />
-              <small class="has-text-grey">2024-05-25 11:09</small>
-            </div>
-          </a>
-        </div>
-        <div class="media-right has-text-grey-dark">
-          <p>Peter Irving</p>
-        </div>
-      </div>
-    </div>
-    <div class="box">
-      <div class="media">
-        <div class="media-left">
-          <i class="fas fa-comment mr-1"></i>10
-        </div>
-        <div class="media-content">
-          <a href="{{ url_for('forum.post') }}">
-            <div class="content">
-              <strong style="color: #0090ff">How to get rid of the snake in my
-                backyard?</strong>
-              <br />
-              <span
-                style="display: inline-block; width: 400px; height: 45px; overflow: hidden; text-overflow: ellipsis;">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-                ornare
-                magna eros, eu pellentesque tortor vestibulum ut. Maecenas non
-                massa
-                sem. Etiam finibus odio quis feugiat facilisis.
-              </span>
-              <br />
-              <small class="has-text-grey">2024-05-25 11:09</small>
-            </div>
-          </a>
-        </div>
-        <div class="media-right has-text-grey-dark">
-          <p>Peter Irving</p>
-        </div>
-      </div>
-    </div>
-    <div class="box">
-      <div class="media">
-        <div class="media-left">
-          <i class="fas fa-comment mr-1"></i>10
-        </div>
-        <div class="media-content">
-          <a href="{{ url_for('forum.post') }}">
-            <div class="content">
-              <strong style="color: #0090ff">How to get rid of the snake in my
-                backyard?</strong>
-              <br />
-              <span
-                style="display: inline-block; width: 400px; height: 45px; overflow: hidden; text-overflow: ellipsis;">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-                ornare
-                magna eros, eu pellentesque tortor vestibulum ut. Maecenas non
-                massa
-                sem. Etiam finibus odio quis feugiat facilisis.
-              </span>
-              <br />
-              <small class="has-text-grey">2024-05-25 11:09</small>
-            </div>
-          </a>
-        </div>
-        <div class="media-right has-text-grey-dark">
-          <p>Peter Irving</p>
-        </div>
-      </div>
-    </div>
-    <div class="box">
-      <div class="media">
-        <div class="media-left">
-          <i class="fas fa-comment mr-1"></i>10
-        </div>
-        <div class="media-content">
-          <a href="{{ url_for('forum.post') }}">
-            <div class="content">
-              <strong style="color: #0090ff">How to get rid of the snake in my
-                backyard?</strong>
-              <br />
-              <span
-                style="display: inline-block; width: 400px; height: 45px; overflow: hidden; text-overflow: ellipsis;">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-                ornare
-                magna eros, eu pellentesque tortor vestibulum ut. Maecenas non
-                massa
-                sem. Etiam finibus odio quis feugiat facilisis.
-              </span>
-              <br />
-              <small class="has-text-grey">2024-05-25 11:09</small>
-            </div>
-          </a>
-        </div>
-        <div class="media-right has-text-grey-dark">
-          <p>Peter Irving</p>
-        </div>
-      </div>
-    </div>
-    <div class="box">
-      <div class="media">
-        <div class="media-left">
-          <i class="fas fa-comment mr-1"></i>10
-        </div>
-        <div class="media-content">
-          <a href="{{ url_for('forum.post') }}">
-            <div class="content">
-              <strong style="color: #0090ff">How to get rid of the snake in my
-                backyard?</strong>
-              <br />
-              <span
-                style="display: inline-block; width: 400px; height: 45px; overflow: hidden; text-overflow: ellipsis;">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-                ornare
-                magna eros, eu pellentesque tortor vestibulum ut. Maecenas non
-                massa
-                sem. Etiam finibus odio quis feugiat facilisis.
-              </span>
-              <br />
-              <small class="has-text-grey">2024-05-25 11:09</small>
-            </div>
-          </a>
-        </div>
-        <div class="media-right has-text-grey-dark">
-          <p>Peter Irving</p>
-        </div>
-      </div>
-    </div>
+    {% endfor %}
   </div>
   <div style="width: 30%" id="placeholder-right"></div>
 </div>
@@ -246,23 +79,23 @@ CSTG '26 Forum - General
     <tbody>
       <tr><td><i class="fas fa-computer mr-1"
             style="width: 25px; color: #06D6A0"></i><a
-            href="{{ url_for('forum.section') }}"
+            href="{{ url_for('forum.section', sec_name='General') }}"
             style="color: black">General</a></td></tr>
       <tr><td><i class="fas fa-lightbulb mr-1"
             style="width: 25px; color: #EF476F"></i><a
-            href="{{ url_for('forum.section') }}"
+            href="{{ url_for('forum.section', sec_name='AI') }}"
             style="color: black">AI</a></td></tr>
       <tr><td><i class="fas fa-globe mr-1"
             style="width: 25px; color: #1B9AAA"></i><a
-            href="{{ url_for('forum.section') }}"
+            href="{{ url_for('forum.section', sec_name='Networks') }}"
             style="color: black">Networks</a></td></tr>
       <tr><td><i class="fas fa-microchip mr-1"
             style="width: 25px; color: blueviolet"></i><a
-            href="{{ url_for('forum.section') }}"
+            href="{{ url_for('forum.section', sec_name='Architecture') }}"
             style="color: black">Architecture</a></td></tr>
       <tr><td><i class="fas fa-key mr-1"
             style="width: 25px; color: #FFC233"></i><a
-            href="{{ url_for('forum.section') }}"
+            href="{{ url_for('forum.section', sec_name='Cryptography') }}"
             style="color: black">Cryptography</a></td></tr>
     </tbody>
   </table>
@@ -447,7 +280,7 @@ CSTG '26 Forum - General
     <article class="media">
       <div class="media-content">
         <div class="box">
-          <form class="form" method="post" action>
+          <form class="form" method="post">
             <div class="field">
               <label class="label" style="font-size: 1.5rem">Title</label>
               <div class="control">
@@ -457,7 +290,7 @@ CSTG '26 Forum - General
             <div class="field">
               <label class="label" style="font-size: 1.5rem">Details</label>
               <div class="control">
-                <textarea class="textarea"></textarea>
+                <textarea class="textarea" name="content" required></textarea>
               </div>
             </div>
             <div class="field">

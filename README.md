@@ -21,3 +21,4 @@
 - navbar 右侧放上头像和全名.
 - 生成 forum 的数据, section 和 post 模板化.
 - reply modal 的布局有点别扭?
+- 要么前后端都加字符串长度检查, 要么所有 insert into 都加 try-except.
