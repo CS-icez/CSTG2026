@@ -36,10 +36,9 @@ def parse_sql_file(filename):
         sql_list = [x.replace('\n', ' ') if '\n' in x else x for x in sql_list]
     return sql_list
 
-def execute_sql_file(filename):
+def execute_sql_list(sql_list):
     db = get_db()
     cursor = db.cursor()
-    sql_list = parse_sql_file(filename)
     try:
         for sql in sql_list:
             cursor.execute(sql)
@@ -49,8 +48,16 @@ def execute_sql_file(filename):
         print(e)
     cursor.close()
 
+def execute_sql_file(filename):
+    sql_list = parse_sql_file(filename)
+    execute_sql_list(sql_list)
+
 def init_db():
     execute_sql_file('sql/schema.sql')
+    with current_app.open_resource('sql/trigger.sql') as f:
+        sql = f.read().decode('utf8')
+        execute_sql_list([sql])
+    # execute_sql_file('sql/trigger.sql')
     execute_sql_file('sql/section.sql')
 
 @click.command('init-db')

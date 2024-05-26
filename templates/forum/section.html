@@ -47,7 +47,7 @@ CSTG '26 Forum - General
           <i class="fas fa-comment mr-1"></i>{{ post[6] }}
         </div>
         <div class="media-content">
-          <a href="{{ url_for('forum.post') }}">
+          <a href="{{ url_for('forum.post', sec_name=sec_name, post_id=post[0]) }}">
             <div class="content">
               <strong style="color: #0090ff">{{ post[1] }}</strong>
               <br />
@@ -74,31 +74,7 @@ CSTG '26 Forum - General
   class="is-flex is-flex-direction-column is-justify-content-flex-start is-align-items-center"
   style="width: 30%;" id="fixed-right">
   <div style="height: 30px"></div>
-  <table
-    class="table is-bordered is-striped is-hoverable is-fullwidth is-size-5">
-    <tbody>
-      <tr><td><i class="fas fa-computer mr-1"
-            style="width: 25px; color: #06D6A0"></i><a
-            href="{{ url_for('forum.section', sec_name='General') }}"
-            style="color: black">General</a></td></tr>
-      <tr><td><i class="fas fa-lightbulb mr-1"
-            style="width: 25px; color: #EF476F"></i><a
-            href="{{ url_for('forum.section', sec_name='AI') }}"
-            style="color: black">AI</a></td></tr>
-      <tr><td><i class="fas fa-globe mr-1"
-            style="width: 25px; color: #1B9AAA"></i><a
-            href="{{ url_for('forum.section', sec_name='Networks') }}"
-            style="color: black">Networks</a></td></tr>
-      <tr><td><i class="fas fa-microchip mr-1"
-            style="width: 25px; color: blueviolet"></i><a
-            href="{{ url_for('forum.section', sec_name='Architecture') }}"
-            style="color: black">Architecture</a></td></tr>
-      <tr><td><i class="fas fa-key mr-1"
-            style="width: 25px; color: #FFC233"></i><a
-            href="{{ url_for('forum.section', sec_name='Cryptography') }}"
-            style="color: black">Cryptography</a></td></tr>
-    </tbody>
-  </table>
+  {% include 'components/section_table.html' %}
   <div class="is-flex; is-justify-content-center;">
     <button class="button is-large is-outlined is-primary mb-6 js-modal-trigger"
       data-target="CreatePost">
@@ -107,172 +83,6 @@ CSTG '26 Forum - General
     </button>
   </div>
 </div>
-
-<!-- <div class="block container-display" style="margin-top: 50px;">
-  <div class="title is-2">
-    CSTG '26 Official Forum General Section
-  </div>
-</div>
-
-<div class="block" style="margin: 50px 150px">
-  <article class="media">
-    <figure class="media-left">
-      <p class="image is-64x64">
-        <img src="{{ url_for('static', filename='images/wode.jpg') }}"
-          style="width: 64px; height: 64px" />
-      </p>
-    </figure>
-    <div class="media-content">
-      <a href="{{ url_for('forum.post') }}">
-        <div class="content">
-          <p>
-            <strong>Barbara Middleton</strong>
-            <br />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta
-            eros
-            lacus, nec ultricies elit blandit non. Suspendisse pellentesque
-            mauris
-            sit amet dolor blandit rutrum. Nunc in tempus turpis.
-            <br />
-            <small style="color: grey">2024-5-21</small>
-          </p>
-        </div>
-      </a>
-    </div>
-  </article>
-
-  <article class="media">
-    <figure class="media-left">
-      <p class="image is-64x64">
-        <img src="{{ url_for('static', filename='images/snakeman.jpg') }}"
-          style="width: 64px; height: 64px" />
-      </p>
-    </figure>
-    <div class="media-content">
-      <a href="{{ url_for('forum.post') }}">
-        <div class="content">
-          <p>
-            <strong>Barbara Middleton</strong>
-            <br />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta
-            eros
-            lacus, nec ultricies elit blandit non. Suspendisse pellentesque
-            mauris
-            sit amet dolor blandit rutrum. Nunc in tempus turpis.
-            <br />
-            <small style="color: grey">2024-5-21</small>
-          </p>
-        </div>
-      </a>
-    </div>
-  </article>
-
-  <article class="media">
-    <figure class="media-left">
-      <p class="image is-64x64">
-        <img src="{{ url_for('static', filename='images/foot.jpg') }}"
-          style="width: 64px; height: 64px" />
-      </p>
-    </figure>
-    <div class="media-content">
-      <a href="{{ url_for('forum.post') }}">
-        <div class="content">
-          <p>
-            <strong>Barbara Middleton</strong>
-            <br />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta
-            eros
-            lacus, nec ultricies elit blandit non. Suspendisse pellentesque
-            mauris
-            sit amet dolor blandit rutrum. Nunc in tempus turpis.
-            <br />
-            <small style="color: grey">2024-5-21</small>
-          </p>
-        </div>
-      </a>
-    </div>
-  </article>
-
-  <article class="media">
-    <figure class="media-left">
-      <p class="image is-64x64">
-        <img src="{{ url_for('static', filename='images/peter.jpg') }}"
-          style="width: 64px; height: 64px" />
-      </p>
-    </figure>
-    <div class="media-content">
-      <a href="{{ url_for('forum.post') }}">
-        <div class="content">
-          <p>
-            <strong>Barbara Middleton</strong>
-            <br />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta
-            eros
-            lacus, nec ultricies elit blandit non. Suspendisse pellentesque
-            mauris
-            sit amet dolor blandit rutrum. Nunc in tempus turpis.
-            <br />
-            <small style="color: grey">2024-5-21</small>
-          </p>
-        </div>
-      </a>
-    </div>
-  </article>
-
-  <article class="media">
-    <figure class="media-left">
-      <p class="image is-64x64">
-        <img src="{{ url_for('static', filename='images/iceman.jpg') }}"
-          style="width: 64px; height: 64px" />
-      </p>
-    </figure>
-    <div class="media-content">
-      <a href="{{ url_for('forum.post') }}">
-        <div class="content">
-          <p>
-            <strong>Barbara Middleton</strong>
-            <br />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta
-            eros
-            lacus, nec ultricies elit blandit non. Suspendisse pellentesque
-            mauris
-            sit amet dolor blandit rutrum. Nunc in tempus turpis.
-            <br />
-            <small style="color: grey">2024-5-21</small>
-          </p>
-        </div>
-      </a>
-    </div>
-  </article>
-
-  <article class="media">
-    <figure class="media-left">
-      <p class="image is-64x64">
-        <img src="{{ url_for('static', filename='images/wode.jpg') }}"
-          style="width: 64px; height: 64px" />
-      </p>
-    </figure>
-    <div class="media-content">
-      <a href="{{ url_for('forum.post') }}">
-        <div class="content">
-          <p>
-            <strong>Barbara Middleton</strong>
-            <br />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta
-            eros
-            lacus, nec ultricies elit blandit non. Suspendisse pellentesque
-            mauris
-            sit amet dolor blandit rutrum. Nunc in tempus turpis.
-            <br />
-            <small style="color: grey">2024-5-21</small>
-          </p>
-        </div>
-      </a>
-    </div>
-  </article>
-</div>
-
-<div style="height: 170px"></div> -->
 
 <div class="modal" id="CreatePost">
   <div class="modal-background"></div>

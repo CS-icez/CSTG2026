@@ -14,7 +14,7 @@ CREATE TABLE usr (
 
 CREATE TABLE paper (
     paper_id INT PRIMARY KEY AUTO_INCREMENT,
-    title VARCHAR(50) NOT NULL,
+    title VARCHAR(500) NOT NULL,
     abstract TEXT NOT NULL,
     filename VARCHAR(50) NOT NULL,
     reviewer_id INT NOT NULL,
@@ -38,7 +38,7 @@ CREATE TABLE section (
 
 CREATE TABLE post (
     post_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    title VARCHAR(50) NOT NULL,
+    title VARCHAR(500) NOT NULL,
     content TEXT NOT NULL,
     sec_id INT NOT NULL,
     pub_id INT NOT NULL,
