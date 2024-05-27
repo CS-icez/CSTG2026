@@ -52,7 +52,7 @@ Now you can view our website at `http://localhost:5000`.
 Initialization:
 
 1. Make sure that you have [Python](https://www.python.org/) and [MySQL](https://www.mysql.com) locally. We are running under Python 3.10.12 and MySQL 8.2.0. We do not guarantee that the project will run in other environments.
-2. Install Python package Flask and Flask-Uploads.
+2. Install Python package PyMySQL, Flask, and Flask-Uploads.
 3. Clone this repo.
 4. Replace the user name and password in `db.py` with your MySQL account. Replace the `FLASK_APP` in `init_server.sh` and `start_server.sh` with the path of this repo.
 5. Change to the parent directory of this repo and run `CSTG2026/init_server.sh`.
