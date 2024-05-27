@@ -42,7 +42,7 @@ docker pull icez26/cstg2026:latest
 Start server:
 
 ```shell
-docker run --rm -p 5000:5000 -it icez26/cstg2026
+docker run --rm -p 15000:5000 -it icez26/cstg2026
 ```
 
 Now you can view our website at `http://localhost:5000`.
