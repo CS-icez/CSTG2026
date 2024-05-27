@@ -12,7 +12,6 @@ configure_uploads(app, files)
 
 @app.route('/uploads/<filename>')
 def uploads(filename):
-    print('hello')
     return send_from_directory(app.config['UPLOADED_FILES_DEST'], filename)
 
 from . import db
