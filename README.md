@@ -4,15 +4,19 @@ Welcome to the repository for the CSTG2026 conference website. This website has 
 
 ## Table of Contents
 
-- [Project Overview](#project-overview)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Common Issues](#common-issues)
-- [Pending Tasks](#pending-tasks)
-- [Contributing](#contributing)
-- [Disclaimer](#disclaimer)
-- [Contact](#contact)
+- [CSTG 2026 Conference Website](#cstg-2026-conference-website)
+  - [Table of Contents](#table-of-contents)
+  - [Project Overview](#project-overview)
+  - [Features](#features)
+  - [Installation](#installation)
+    - [Option 1: Docker (recommended)](#option-1-docker-recommended)
+    - [Option 2: Local](#option-2-local)
+  - [Usage](#usage)
+  - [Common Issues](#common-issues)
+  - [Pending Tasks](#pending-tasks)
+  - [Contributing](#contributing)
+  - [Disclaimer](#disclaimer)
+  - [Contact](#contact)
 
 ## Project Overview
 
@@ -45,7 +49,7 @@ Start server:
 docker run --rm -p 15000:5000 -it icez26/cstg2026
 ```
 
-Now you can view our website at `http://localhost:5000`.
+Now you can view our website at `http://localhost:15000`.
 
 ### Option 2: Local
 
@@ -59,7 +63,7 @@ Initialization:
 
 Start the deployment server: change to the parent directory of this repo and run `CSTG2026/start_server.sh`.
 
-Now you can view our website at `http://localhost:5000`.
+Now you can view our website at `http://localhost:15000`.
 
 ## Usage
 
